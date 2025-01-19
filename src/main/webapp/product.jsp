@@ -24,7 +24,11 @@
     />
     <link rel="stylesheet" href="assects/css/header.css" />
     <link rel="stylesheet" href="assects/css/main.css" />
+    <link rel="stylesheet" href="assects/css/product.css">
 </head>
+<style>
+
+</style>
 <body>
 <header>
     <div class="topHeader">
@@ -84,23 +88,26 @@
                 <p>123-456-7890</p>
             </div>
         </div>
-        <a href="index.jsp" class="btn btn-primary " id="logout">
-            <b>LogOut </b>
-        </a>
+
+        <div>
+            <!-- Button to trigger modal -->
+            <button type="button" class="btn btn-primary addProduct" data-bs-toggle="modal" data-bs-target="#productModal">
+                <b>ADD PRODUCTS</b>
+            </button>
+            <a href="index.jsp" class="btn btn-primary addProduct" id="logout">
+                <b>LogOut </b>
+            </a>
+        </div>
+
     </div>
 </header>
 <main>
-    <!-- Button to trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">
-        <b>ADD PRODUCTS</b>
-    </button>
 
     <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="productModalLabel">Add New Product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="productModalLabel">ADD NEW PRODUCT</h5>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -112,9 +119,6 @@
                             <label for="product-category" class="form-label">Category</label>
                             <select class="form-select" id="product-category" name="product_category" required>
                                 <option selected disabled>Select a category</option>
-<%--                                <% for (String category : categories) { %>--%>
-<%--                                <option value="<%= category %>"><%= category %></option>--%>
-<%--                                <% } %>--%>
                             </select>
                         </div>
 
@@ -129,8 +133,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save Product</button>
+                    <button type="button" class="btn btn-secondary back" data-bs-dismiss="modal">BACK</button>
+                    <button type="button" class="btn btn-primary saveProduct">SAVE PRODUCT</button>
                 </div>
             </div>
         </div>

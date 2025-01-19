@@ -1,0 +1,39 @@
+.modal-body{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+form{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.addProduct,.saveProduct,.back{
+    width: 150px;
+    height: 40px;
+    background-color: darkcyan;
+    color: white;
+    font-size: 17px;
+    font-family: "Roboto Condensed", serif;
+}
+.addProduct:hover,.saveProduct:hover,.back:hover{
+    background-color: darkblue;
+    color: white;
+}
+.modal-title{
+    font-family: "Roboto Condensed", serif;
+    font-size: 25px;
+    text-align: center;
+}
+.modal-header{
+    margin: auto;
+}
+.modal-footer{
+    margin: auto;
+}
