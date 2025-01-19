@@ -95,7 +95,6 @@
         <b>ADD PRODUCTS</b>
     </button>
 
-    <!-- Modal structure -->
     <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
