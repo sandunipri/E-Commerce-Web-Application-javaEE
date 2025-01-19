@@ -24,40 +24,12 @@
     />
     <link rel="stylesheet" href="assects/css/header.css" />
     <link rel="stylesheet" href="assects/css/main.css" />
+    <link rel="stylesheet" href="assects/css/category.css">
 </head>
 <style>
-    .category-set{
-        display: flex;
-        flex-direction: row;
-    }
-    .card {
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .card img {
-        height: 200px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-    .card:hover img {
-        transform: scale(1.05);
-    }
-    .btn-view-products {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .btn-view-products:hover {
-        background-color: #45a049;
-        transform: translateY(-2px);
-    }
+
+
+
 </style>
 <body>
 <header>
@@ -118,49 +90,21 @@
                 <p>123-456-7890</p>
             </div>
         </div>
-        <a href="index.jsp" class="btn btn-primary " id="logout">
-            <b>LogOut </b>
-        </a>
+
+        <div class="categoryBtn">
+            <button type="button" class="btn addCategory" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                <b>ADD CATEGORY</b>
+            </button>
+            <a href="index.jsp" class="btn " id="logout">
+                <b>LogOut </b>
+            </a>
+        </div>
+
     </div>
 </header>
 <main>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryModal">
-        <b>ADD CATEGORY</b>
-    </button>
 
-    <%--load catergory pop up window--%>
-    <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="categoryModalLabel">Add New Category</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="category-name" class="form-label">Category Name</label>
-                            <input type="text" class="form-control" id="category-name" name="category-name" placeholder="Enter category name">
-                        </div>
-                        <!-- Image -->
-                        <div class="mb-3">
-                            <label for="productImage" class="form-label">Upload Image</label>
-                            <input type="file" class="form-control" id="productImage" name="image" accept="image/*" required>
-                           </div>
-                        <div class="mb-3">
-                            <label for="category-description" class="form-label">Description</label>
-                            <textarea class="form-control" id="category-description"  name="category_description" rows="3" placeholder="Enter description"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save Category</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<%--
     <%
         String message = request.getParameter("message");
         if (message != null){
@@ -178,7 +122,37 @@
     <div style="color: red"><%=error%></div>
     <%
         }
-    %>
+    %>--%>
+    <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content d-flex align-items-center">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="categoryModalLabel">ADD NEW CATEGORY</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="category-name" class="form-label">Category Name</label>
+                            <input type="text" class="form-control" id="category-name" name="category-name" placeholder="Enter category name">
+                        </div>
+                        <!-- Image -->
+                        <div class="mb-3">
+                            <label for="productImage" class="form-label">Upload Image</label>
+                            <input type="file" class="form-control" id="productImage" name="image" accept="image/*" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category-description" class="form-label">Description</label>
+                            <textarea class="form-control" id="category-description"  name="category_description" rows="3" placeholder="Enter description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary back" data-bs-dismiss="modal">BACK</button>
+                    <button type="button" class="btn btn-primary saveCategory">SAVE CATEGORY</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="category-set">
         <div class="container my-5">
@@ -187,7 +161,7 @@
                     <div class="card">
                         <h5 class="card-title">Mystery Books</h5>
                         <img src="assects/images/story%20category%20-01.jpg" class="card-img-top" alt="Product Image">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <p class="card-text">
                                 This is a creative description of the product. It highlights the unique features and benefits that make this product stand out.
                             </p>
@@ -199,7 +173,19 @@
                     <div class="card">
                         <h5 class="card-title">Horror Books</h5>
                         <img src="assects/images/story%20category%20-02.jpg" class="card-img-top" alt="Category Image">
-                        <div class="card-body">
+                        <div class="card-body text-center">
+                            <p class="card-text">
+                                This is a creative description of the product. It highlights the unique features and benefits that make this product stand out.
+                            </p>
+                            <a href="#" class="btn btn-view-products">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="max-width: 30%;">
+                    <div class="card">
+                        <h5 class="card-title">Mystery Books</h5>
+                        <img src="assects/images/story%20category%20-01.jpg" class="card-img-top" alt="Product Image">
+                        <div class="card-body text-center">
                             <p class="card-text">
                                 This is a creative description of the product. It highlights the unique features and benefits that make this product stand out.
                             </p>

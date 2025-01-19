@@ -1,0 +1,75 @@
+.category-set{
+    display: flex;
+    flex-direction: row;
+}
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: "Roboto Condensed", serif;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: darkcyan;
+
+}
+.card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.card:hover img {
+    transform: scale(1.05);
+}
+.btn-view-products {
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: "Roboto Condensed", serif;
+}
+.btn-view-products:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+.addCategory,.saveCategory,.back{
+    width: 150px;
+    height: 40px;
+    background-color: darkcyan;
+    color: white;
+    font-size: 17px;
+    font-family: "Roboto Condensed", serif;
+}
+.addCategory:hover, .saveCategory:hover, .back:hover{
+    background-color: darkblue;
+    color: white;
+}
+.modal-body{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.modal-title{
+    font-family: "Roboto Condensed", serif;
+}
