@@ -1,0 +1,222 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Sanduni
+  Date: 1/19/2025
+  Time: 9:30 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Category management</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assects/css/header.css" />
+    <link rel="stylesheet" href="assects/css/main.css" />
+</head>
+<style>
+    .category-set{
+        display: flex;
+        flex-direction: row;
+    }
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .card img {
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .card:hover img {
+        transform: scale(1.05);
+    }
+    .btn-view-products {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .btn-view-products:hover {
+        background-color: #45a049;
+        transform: translateY(-2px);
+    }
+</style>
+<body>
+<header>
+    <div class="topHeader">
+        <div class="logoAndName">
+            <img class="logo" src="assects/images/web%20application%20picture.jpg" alt="Web Application Logo">
+            <p class="webTitle">WEB APPLICATION</p>
+        </div>
+        <div class="nav-list">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">PRODUCTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">CART</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    PAGES
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">ORDERS</a></li>
+                                    <li><a class="dropdown-item" href="#">USERS</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="middleHeader">
+
+        <div class="searchBar">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="contactBox">
+            <div class="callIcon"><i class="fa-solid fa-headphones"></i></div>
+            <div class="callDesc">
+                <p>Free Support 24/H</p>
+                <p>123-456-7890</p>
+            </div>
+        </div>
+        <a href="index.jsp" class="btn btn-primary " id="logout">
+            <b>LogOut </b>
+        </a>
+    </div>
+</header>
+<main>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryModal">
+        <b>ADD CATEGORY</b>
+    </button>
+
+    <%--load catergory pop up window--%>
+    <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="categoryModalLabel">Add New Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="category-name" class="form-label">Category Name</label>
+                            <input type="text" class="form-control" id="category-name" name="category-name" placeholder="Enter category name">
+                        </div>
+                        <!-- Image -->
+                        <div class="mb-3">
+                            <label for="productImage" class="form-label">Upload Image</label>
+                            <input type="file" class="form-control" id="productImage" name="image" accept="image/*" required>
+                           </div>
+                        <div class="mb-3">
+                            <label for="category-description" class="form-label">Description</label>
+                            <textarea class="form-control" id="category-description"  name="category_description" rows="3" placeholder="Enter description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Category</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%
+        String message = request.getParameter("message");
+        if (message != null){
+    %>
+    <div style="color: green"><%=message%></div>
+    <%
+        }
+
+    %>
+
+    <%
+        String error = request.getParameter("error");
+        if (error != null){
+    %>
+    <div style="color: red"><%=error%></div>
+    <%
+        }
+    %>
+
+    <section class="category-set">
+        <div class="container my-5">
+            <div class="row d-flex flex-wrap justify-content-center">
+                <div class="col-md-4" style="max-width: 30%;">
+                    <div class="card">
+                        <h5 class="card-title">Mystery Books</h5>
+                        <img src="assects/images/story%20category%20-01.jpg" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <p class="card-text">
+                                This is a creative description of the product. It highlights the unique features and benefits that make this product stand out.
+                            </p>
+                            <a href="#" class="btn btn-view-products">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="max-width: 30%;">
+                    <div class="card">
+                        <h5 class="card-title">Horror Books</h5>
+                        <img src="assects/images/story%20category%20-02.jpg" class="card-img-top" alt="Category Image">
+                        <div class="card-body">
+                            <p class="card-text">
+                                This is a creative description of the product. It highlights the unique features and benefits that make this product stand out.
+                            </p>
+                            <a href="#" class="btn btn-view-products">View Products</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more cards here -->
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<script src="assects/js/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
