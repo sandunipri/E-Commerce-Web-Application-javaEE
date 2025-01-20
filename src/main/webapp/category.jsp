@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
   User: Sanduni
   Date: 1/19/2025
@@ -130,10 +130,10 @@
                     <h5 class="modal-title" id="categoryModalLabel">ADD NEW CATEGORY</h5>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form enctype="multipart/form-data" action="category" method="post">
                         <div class="mb-3">
                             <label for="category-name" class="form-label">Category Name</label>
-                            <input type="text" class="form-control" id="category-name" name="category-name" placeholder="Enter category name">
+                            <input type="text" class="form-control" id="category-name" name="name" placeholder="Enter category name">
                         </div>
                         <!-- Image -->
                         <div class="mb-3">
@@ -144,12 +144,13 @@
                             <label for="category-description" class="form-label">Description</label>
                             <textarea class="form-control" id="category-description"  name="category_description" rows="3" placeholder="Enter description"></textarea>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary back" data-bs-dismiss="modal">BACK</button>
+                            <button type="submit" class="btn btn-primary saveCategory">SAVE CATEGORY</button>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary back" data-bs-dismiss="modal">BACK</button>
-                    <button type="button" class="btn btn-primary saveCategory">SAVE CATEGORY</button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -157,19 +158,31 @@
     <section class="category-set">
         <div class="container my-5">
             <div class="row d-flex flex-wrap justify-content-center">
+
+                <%
+                    ResultSet resulSet = (ResultSet) request.getAttribute("resulSet");
+                    if (resulSet != null){
+                        while (resulSet.next()){
+                %>
                 <div class="col-md-4" style="max-width: 30%;">
                     <div class="card">
-                        <h5 class="card-title">Mystery Books</h5>
-                        <img src="assects/images/story%20category%20-01.jpg" class="card-img-top" alt="Product Image">
+                        <h5 class="card-title"><%=resulSet.getString(2)%></h5>
+                        <img src="<%=resulSet.getString(3)%>" class="card-img-top" alt="Product Image">
                         <div class="card-body text-center">
                             <p class="card-text">
-                                This is a creative description of the product. It highlights the unique features and benefits that make this product stand out.
+                                <%=resulSet.getString(4)%>
                             </p>
                             <a href="#" class="btn btn-view-products">View Products</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" style="max-width: 30%;">
+
+                <%
+                        }
+                    }
+                %>
+
+                <%--<div class="col-md-4" style="max-width: 30%;">
                     <div class="card">
                         <h5 class="card-title">Horror Books</h5>
                         <img src="assects/images/story%20category%20-02.jpg" class="card-img-top" alt="Category Image">
@@ -192,8 +205,7 @@
                             <a href="#" class="btn btn-view-products">View Products</a>
                         </div>
                     </div>
-                </div>
-                <!-- Add more cards here -->
+                </div>--%>
             </div>
         </div>
     </section>

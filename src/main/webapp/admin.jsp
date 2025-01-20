@@ -74,7 +74,7 @@
                                 <li><a class="dropdown-item" href="#">Mystery & Thriller</a></li>
                                 <li><a class="dropdown-item" href="#">Science Fiction & Fantasy</a></li>
                                 <li><a class="dropdown-item" href="#">Romance</a></li>
-                                <li><a class="dropdown-item" href="category.jsp"><button type="button" class="btn btn-secondary">Add Category</button></a></li>
+                                <li><a class="dropdown-item" href="category"><button type="button" class="btn btn-secondary">Add Category</button></a></li>
                             </ul>
 
                         </div>
