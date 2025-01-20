@@ -60,7 +60,7 @@
                                     PAGES
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">ORDERS</a></li>
+                                    <li><a class="dropdown-item" href="order.jsp">ORDERS</a></li>
                                     <li><a class="dropdown-item" href="#">USERS</a></li>
                                 </ul>
                             </li>
