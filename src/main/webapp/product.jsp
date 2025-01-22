@@ -110,7 +110,7 @@
                     <h5 class="modal-title" id="productModalLabel">ADD NEW PRODUCT</h5>
                 </div>
                 <div class="modal-body">
-                    <form action="product" method="post">
+                    <form action="product" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="product-name" class="form-label">Product Name</label>
                             <input type="text" class="form-control" id="product-name" name="product_name" placeholder="Enter product name" required>
