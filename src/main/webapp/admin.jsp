@@ -17,13 +17,14 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="assects/css/header.css" />
-    <link rel="stylesheet" href="assects/css/main.css" />
+    <link rel="stylesheet" href="assects/css/header.css"/>
+    <link rel="stylesheet" href="assects/css/main.css"/>
 </head>
 <style>
 
@@ -39,7 +40,9 @@
         <div class="nav-list">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -54,7 +57,8 @@
                                 <a class="nav-link" href="#">CART</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
                                     PAGES
                                 </a>
                                 <ul class="dropdown-menu">
@@ -65,7 +69,8 @@
                             </li>
                         </ul>
                         <div class="dropdown">
-                            <button class="btnCategory dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btnCategory dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
                                 CATEGORY
                             </button>
                             <ul class="dropdown-menu">
@@ -74,7 +79,9 @@
                                 <li><a class="dropdown-item" href="#">Mystery & Thriller</a></li>
                                 <li><a class="dropdown-item" href="#">Science Fiction & Fantasy</a></li>
                                 <li><a class="dropdown-item" href="#">Romance</a></li>
-                                <li><a class="dropdown-item" href="category"><button type="button" class="btn btn-secondary">Add Category</button></a></li>
+                                <li><a class="dropdown-item" href="category">
+                                    <button type="button" class="btn btn-secondary">Add Category</button>
+                                </a></li>
                             </ul>
 
                         </div>
@@ -108,85 +115,91 @@
     </div>
 </header>
 <main>
-    <section class="carousal"><div class="bookDesc">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
-            <div class="carousel-inner carousel-control-transition">
-                <div class="carousel-item active">
-                    <img src="assects/images/s.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+    <section class="carousal">
+        <div class="bookDesc">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+                <div class="carousel-inner carousel-control-transition">
+                    <div class="carousel-item active">
+                        <img src="assects/images/s.jpg" class="d-block imgCarousal" alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="carousel-item">
-                    <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+                    <div class="carousel-item">
+                        <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal"
+                             alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assects/images/story%20book%20-04.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+                    <div class="carousel-item">
+                        <img src="assects/images/story%20book%20-04.jpg" class="d-block imgCarousal"
+                             alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assects/images/story%20book%20-05.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+                    <div class="carousel-item">
+                        <img src="assects/images/story%20book%20-05.jpg" class="d-block imgCarousal"
+                             alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+                    <div class="carousel-item">
+                        <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal"
+                             alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div></section>
+    </section>
     <section class="AboutBooks">
         <div class="about">
             <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary position-relative">
-                <img    class="image-background position-absolute w-100 h-100"
-                        src="assects/images/story%20background-02.jpg"
-                        alt="background-image"
-                        style="z-index: 1; object-fit: cover; top: 0; left: 0"
+                <img class="image-background position-absolute w-100 h-100"
+                     src="assects/images/story%20background-02.jpg"
+                     alt="background-image"
+                     style="z-index: 1; object-fit: cover; top: 0; left: 0"
                 />
                 <div class="col-lg-6 px-0 position-relative">
                     <h1 class="display-4 fst-italic">
@@ -253,7 +266,9 @@
 </main>
 <footer></footer>
 <script src="assects/js/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

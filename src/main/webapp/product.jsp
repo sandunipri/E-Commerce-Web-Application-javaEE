@@ -20,13 +20,14 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="assects/css/header.css" />
-    <link rel="stylesheet" href="assects/css/main.css" />
+    <link rel="stylesheet" href="assects/css/header.css"/>
+    <link rel="stylesheet" href="assects/css/main.css"/>
     <link rel="stylesheet" href="assects/css/product.css">
 </head>
 <style>
@@ -42,7 +43,9 @@
         <div class="nav-list">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -57,7 +60,8 @@
                                 <a class="nav-link" href="#">CART</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
                                     PAGES
                                 </a>
                                 <ul class="dropdown-menu">
@@ -94,7 +98,8 @@
 
         <div>
             <!-- Button to trigger modal -->
-            <button type="button" class="btn btn-primary addProduct" data-bs-toggle="modal" data-bs-target="#productModal">
+            <button type="button" class="btn btn-primary addProduct" data-bs-toggle="modal"
+                    data-bs-target="#productModal">
                 <b>ADD PRODUCTS</b>
             </button>
             <a href="index.jsp" class="btn btn-primary addProduct" id="logout">
@@ -116,7 +121,8 @@
                     <form action="product" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="product-name" class="form-label">Product Name</label>
-                            <input type="text" class="form-control" id="product-name" name="product_name" placeholder="Enter product name" required>
+                            <input type="text" class="form-control" id="product-name" name="product_name"
+                                   placeholder="Enter product name" required>
                         </div>
                         <div class="mb-3">
                             <label for="product-category" class="form-label">Category</label>
@@ -130,19 +136,23 @@
 
                         <div class="mb-3">
                             <label for="product-image" class="form-label">Upload Image</label>
-                            <input type="file" class="form-control" id="product-image" name="product_image" accept="image/*" required>
+                            <input type="file" class="form-control" id="product-image" name="product_image"
+                                   accept="image/*" required>
                         </div>
                         <div class="mb-3">
                             <label for="product-description" class="form-label">Description</label>
-                            <textarea class="form-control" id="product-description" name="product_description" rows="3" placeholder="Enter product description" required></textarea>
+                            <textarea class="form-control" id="product-description" name="product_description" rows="3"
+                                      placeholder="Enter product description" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="product-qty" class="form-label">QTY</label>
-                            <input class="form-control" type="number" id="product-qty" name="product_qty"  placeholder="Enter product qty" required>
+                            <input class="form-control" type="number" id="product-qty" name="product_qty"
+                                   placeholder="Enter product qty" required>
                         </div>
                         <div class="mb-3">
                             <label for="product-price" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="product-price" name="product_price" placeholder="Enter product price" required>
+                            <input type="number" class="form-control" id="product-price" name="product_price"
+                                   placeholder="Enter product price" required>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary back" data-bs-dismiss="modal">BACK</button>
@@ -157,8 +167,8 @@
     <div class="card">
         <%
             List<ProductCard> productList = (List<ProductCard>) request.getAttribute("productList");
-            if (productList != null){
-            for (ProductCard productCard : productList){
+            if (productList != null) {
+                for (ProductCard productCard : productList) {
 
         %>
         <div class="card mb-2" style="max-width: 540px;">
@@ -168,24 +178,30 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title"><%=productCard.getProductName()%></h5>
-                        <p class="card-text text-truncate"><%=productCard.getProductDescription()%></p>
-                        <p class="card-text mb-1"><strong>QTY:</strong><%=productCard.getProductQty()%></p>
-                        <p class="card-text mb-1"><strong>Price:</strong><%=productCard.getProductPrice()%></p>
+                        <h5 class="card-title"><%=productCard.getProductName()%>
+                        </h5>
+                        <p class="card-text text-truncate"><%=productCard.getProductDescription()%>
+                        </p>
+                        <p class="card-text mb-1"><strong>QTY:</strong><%=productCard.getProductQty()%>
+                        </p>
+                        <p class="card-text mb-1"><strong>Price:</strong><%=productCard.getProductPrice()%>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
         <%
+                }
             }
-        }
         %>
     </div>
 
 </main>
 
 <script src="assects/js/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

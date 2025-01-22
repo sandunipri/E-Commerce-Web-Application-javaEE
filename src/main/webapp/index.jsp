@@ -11,14 +11,15 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="assects/css/style.css">
-    <link rel="stylesheet" href="assects/css/header.css" />
-    <link rel="stylesheet" href="assects/css/main.css" />
+    <link rel="stylesheet" href="assects/css/header.css"/>
+    <link rel="stylesheet" href="assects/css/main.css"/>
 </head>
 <style>
 
@@ -27,257 +28,275 @@
 <body>
 <header>
 
-        <div class="topHeader">
-            <div class="logoAndName">
-                <img class="logo" src="assects/images/web%20application%20picture.jpg" alt="Web Application Logo">
-                <p class="webTitle">WEB APPLICATION</p>
-            </div>
-            <div class="nav-list">
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">ABOUT</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        PAGES
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Products</a></li>
-                                        <li><a class="dropdown-item" href="order.jsp">Orders</a></li>
-                                        <li><a class="dropdown-item" href="#">Cart</a></li>
+    <div class="topHeader">
+        <div class="logoAndName">
+            <img class="logo" src="assects/images/web%20application%20picture.jpg" alt="Web Application Logo">
+            <p class="webTitle">WEB APPLICATION</p>
+        </div>
+        <div class="nav-list">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ABOUT</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    PAGES
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Products</a></li>
+                                    <li><a class="dropdown-item" href="order.jsp">Orders</a></li>
+                                    <li><a class="dropdown-item" href="#">Cart</a></li>
 
 
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        BLOG
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Latest Posts</a></li>
-                                        <li><a class="dropdown-item" href="#">Popular Articles</a></li>
-                                        <li><a class="dropdown-item" href="#">Categories</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">CONTACTS</a>
-                                </li>
-                            </ul>
-                        </div>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    BLOG
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Latest Posts</a></li>
+                                    <li><a class="dropdown-item" href="#">Popular Articles</a></li>
+                                    <li><a class="dropdown-item" href="#">Categories</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">CONTACTS</a>
+                            </li>
+                        </ul>
                     </div>
-                </nav>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="middleHeader">
+        <div class="dropdown">
+            <button class="btnCategory dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                CATEGORY
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Contemporary Fiction</a></li>
+                <li><a class="dropdown-item" href="#">Historical Fiction</a></li>
+                <li><a class="dropdown-item" href="#">Mystery & Thriller</a></li>
+                <li><a class="dropdown-item" href="#">Science Fiction & Fantasy</a></li>
+                <li><a class="dropdown-item" href="#">Romance</a></li>
+                <li><a class="dropdown-item" href="#">Horror</a></li>
+            </ul>
+        </div>
+        <div class="searchBar">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="contactBox">
+            <div class="callIcon"><i class="fa-solid fa-headphones"></i></div>
+            <div class="callDesc">
+                <p>Free Support 24/H</p>
+                <p>123-456-7890</p>
             </div>
         </div>
-        <div class="middleHeader">
-            <div class="dropdown">
-                <button class="btnCategory dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    CATEGORY
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Contemporary Fiction</a></li>
-                    <li><a class="dropdown-item" href="#">Historical Fiction</a></li>
-                    <li><a class="dropdown-item" href="#">Mystery & Thriller</a></li>
-                    <li><a class="dropdown-item" href="#">Science Fiction & Fantasy</a></li>
-                    <li><a class="dropdown-item" href="#">Romance</a></li>
-                    <li><a class="dropdown-item" href="#">Horror</a></li>
-                </ul>
-            </div>
-            <div class="searchBar">
-                <nav class="navbar">
-                    <div class="container-fluid">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+        <div class="login">
+            <button type="button" class="btn btn-primary" id="loginOpenPopup">
+                <b>Login </b>or Register
+            </button>
+
+            <%--<button type="button" class="btn btn-primary " id="logout">
+                <b>LogOut </b>
+            </button>--%>
+
+
+            <div class="popup-overlay" id="loginPopupOverlay"></div>
+            <div class="popup" id="popup">
+                <form class="login-form" action="login" method="get">
+                    <h4 class="login-title">LOGIN USER</h4>
+                    <p><span class="font-weight-bold">I am a new User</span></p>
+                    <div class="row">
+                        <div class="col-12 mb--20 line">
+                            <label for="email">Email</label>
+                            <input class="mb-0 form-control loginInput" type="email" id="email" name="RegEmail"
+                                   placeholder="Enter Your Email Address Here..">
+                        </div>
+                        <div class="col-12 mb--20 line">
+                            <label for="password">Password</label>
+                            <input class="mb-0 form-control loginInput" type="password" id="password" name="RegPassword"
+                                   placeholder="Enter your password">
+                        </div>
+                        <div class="col-12 mb--20 line">
+                            <label for="ConfirmPassword">Confirm Password</label>
+                            <input class="mb-0 form-control loginInput" type="password" id="ConfirmPassword"
+                                   name="ConfirmRegPassword" placeholder="Confirm password">
+                        </div>
                     </div>
-                </nav>
+                    <br/>
+                    <div class="btnsUser">
+                        <button class="btnLogin" type="submit">LOGIN</button>
+                        <button class="btnReg" id="registerPopup" type="button">REGISTER</button>
+                    </div>
+                </form>
+
+                <%
+                    String message = request.getParameter("message");
+                    if (message != null) {
+                %>
+                <div style="color: green"><%= message %>
+                </div>
+                <%
+                    }
+                %>
+
+                <%
+                    String error = request.getParameter("error");
+                    if (error != null) {
+                %>
+                <div style="color: red"><%= error %>
+                </div>
+                <%
+                    }
+                %>
             </div>
-            <div class="contactBox">
-                <div class="callIcon"><i class="fa-solid fa-headphones"></i></div>
-                <div class="callDesc">
-                    <p>Free Support 24/H</p>
-                    <p>123-456-7890</p>
-                </div>
-            </div>
-            <div class="login">
-                <button type="button" class="btn btn-primary" id="loginOpenPopup">
-                    <b>Login </b>or Register
-                </button>
-
-                <%--<button type="button" class="btn btn-primary " id="logout">
-                    <b>LogOut </b>
-                </button>--%>
-
-
-
-                <div class="popup-overlay" id="loginPopupOverlay"></div>
-                <div class="popup" id="popup">
-                    <form class="login-form" action="login" method="get" >
-                        <h4 class="login-title">LOGIN USER</h4>
-                        <p><span class="font-weight-bold">I am a new User</span></p>
-                        <div class="row">
-                            <div class="col-12 mb--20 line">
-                                <label for="email">Email</label>
-                                <input class="mb-0 form-control loginInput" type="email" id="email" name="RegEmail" placeholder="Enter Your Email Address Here..">
-                            </div>
-                            <div class="col-12 mb--20 line">
-                                <label for="password">Password</label>
-                                <input class="mb-0 form-control loginInput" type="password" id="password"  name="RegPassword" placeholder="Enter your password">
-                            </div>
-                            <div class="col-12 mb--20 line">
-                                <label for="ConfirmPassword">Confirm Password</label>
-                                <input class="mb-0 form-control loginInput" type="password" id="ConfirmPassword" name="ConfirmRegPassword" placeholder="Confirm password">
-                            </div>
+            <div class="popup-overlay" id="regPopupOverlay"></div>
+            <div class="popup" id="regPopup">
+                <form class="Register-form" action="register" method="post">
+                    <h4 class="register-title">NEW USER</h4>
+                    <p><span class="font-weight-bold">I am a new customer</span></p>
+                    <div class="row">
+                        <div class="col-md-12 col-12 mb--15 line">
+                            <label for="name">Full Name</label>
+                            <input class="mb-0 form-control loginInput registerInput" type="text" id="name" name="name"
+                                   placeholder="Enter your full name">
                         </div>
-                        <br />
-                        <div class="btnsUser">
-                            <button class="btnLogin" type="submit"  >LOGIN</button>
-                            <button class="btnReg" id="registerPopup" type="button">REGISTER</button>
+                        <div class="col-12 mb--20 line">
+                            <label for="RegEmail">Email</label>
+                            <input class="mb-0 form-control loginInput registerInput" type="email" id="RegEmail"
+                                   name="RegEmail" placeholder="Enter Your Email Address Here..">
                         </div>
-                    </form>
-
-                    <%
-                        String message = request.getParameter("message");
-                        if (message != null) {
-                    %>
-                    <div style="color: green"><%= message %></div>
-                    <%
-                        }
-                    %>
-
-                    <%
-                        String error = request.getParameter("error");
-                        if (error != null) {
-                    %>
-                    <div style="color: red"><%= error %></div>
-                    <%
-                        }
-                    %>
-                </div>
-                <div class="popup-overlay" id="regPopupOverlay"></div>
-                <div class="popup" id="regPopup">
-                    <form class="Register-form" action="register" method="post">
-                        <h4 class="register-title">NEW USER</h4>
-                        <p><span class="font-weight-bold">I am a new customer</span></p>
-                        <div class="row">
-                            <div class="col-md-12 col-12 mb--15 line">
-                                <label for="name">Full Name</label>
-                                <input class="mb-0 form-control loginInput registerInput" type="text" id="name" name="name" placeholder="Enter your full name">
-                            </div>
-                            <div class="col-12 mb--20 line">
-                                <label for="RegEmail">Email</label>
-                                <input class="mb-0 form-control loginInput registerInput" type="email" id="RegEmail" name="RegEmail" placeholder="Enter Your Email Address Here..">
-                            </div>
-                            <div class="col-12 mb--20 line">
-                                <label for="RegPassword">Password</label>
-                                <input class="mb-0 form-control loginInput registerInput" type="password" id="RegPassword" name="RegPassword" placeholder="Enter your password">
-                            </div>
-                            <div class="col-12 mb--20 line">
-                                <label for="ConfirmRegPassword">Confirm Password</label>
-                                <input class="mb-0 form-control loginInput registerInput" type="password" id="ConfirmRegPassword" name="ConfirmRegPassword" placeholder="Confirm password">
-                            </div>
+                        <div class="col-12 mb--20 line">
+                            <label for="RegPassword">Password</label>
+                            <input class="mb-0 form-control loginInput registerInput" type="password" id="RegPassword"
+                                   name="RegPassword" placeholder="Enter your password">
                         </div>
-                        <br />
-                        <div class="btnsUser">
-                            <button class="btnLogin" id="backToLogin">BACK</button>
-                            <button class="btnReg" type="submit" id="btnRegister" >REGISTER</button>
+                        <div class="col-12 mb--20 line">
+                            <label for="ConfirmRegPassword">Confirm Password</label>
+                            <input class="mb-0 form-control loginInput registerInput" type="password"
+                                   id="ConfirmRegPassword" name="ConfirmRegPassword" placeholder="Confirm password">
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <br/>
+                    <div class="btnsUser">
+                        <button class="btnLogin" id="backToLogin">BACK</button>
+                        <button class="btnReg" type="submit" id="btnRegister">REGISTER</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-        </div>
+    </div>
+    </div>
 </header>
 <main>
-    <section class="carousal"><div class="bookDesc">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
-            <div class="carousel-inner carousel-control-transition">
-                <div class="carousel-item active">
-                    <img src="assects/images/s.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+    <section class="carousal">
+        <div class="bookDesc">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+                <div class="carousel-inner carousel-control-transition">
+                    <div class="carousel-item active">
+                        <img src="assects/images/s.jpg" class="d-block imgCarousal" alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="carousel-item">
-                    <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+                    <div class="carousel-item">
+                        <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal"
+                             alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assects/images/story%20book%20-04.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+                    <div class="carousel-item">
+                        <img src="assects/images/story%20book%20-04.jpg" class="d-block imgCarousal"
+                             alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assects/images/story%20book%20-05.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+                    <div class="carousel-item">
+                        <img src="assects/images/story%20book%20-05.jpg" class="d-block imgCarousal"
+                             alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal" alt="Story-picture-01">
-                    <div class="carousel-caption d-none d-md-block caption-right">
-                        <h1>Story Book</h1>
-                        <p>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                        </p>
+                    <div class="carousel-item">
+                        <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal"
+                             alt="Story-picture-01">
+                        <div class="carousel-caption d-none d-md-block caption-right">
+                            <h1>Story Book</h1>
+                            <p>
+                                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                eu fugiat nulla pariatur.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div></section>
+    </section>
     <section class="AboutBooks">
         <div class="about">
             <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary position-relative">
-                <img    class="image-background position-absolute w-100 h-100"
-                        src="assects/images/story%20background-02.jpg"
-                        alt="background-image"
-                        style="z-index: 1; object-fit: cover; top: 0; left: 0"
+                <img class="image-background position-absolute w-100 h-100"
+                     src="assects/images/story%20background-02.jpg"
+                     alt="background-image"
+                     style="z-index: 1; object-fit: cover; top: 0; left: 0"
                 />
                 <div class="col-lg-6 px-0 position-relative">
                     <h1 class="display-4 fst-italic">
@@ -341,77 +360,85 @@
         </div>
     </section>
     <section>
-                <div class="card-set">
-                    <div class="cardUpperRow">
-                        <div class="card">
-                        <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                        <div class="card" >
-                            <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <div class="card" >
-                            <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cardDownRow">
-                        <div class="card" >
-                        <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                        <div class="card" >
-                            <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
+        <div class="card-set">
+            <div class="cardUpperRow">
+                <div class="card">
+                    <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
-</section>
+                <div class="card">
+                    <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cardDownRow">
+                <div class="card">
+                    <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assects/images/story.jpg" class="card-img-top cardImage" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section>
 
@@ -421,7 +448,9 @@
 </main>
 <footer></footer>
 <script src="assects/js/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 <script>
     function openPopup(popupId, overlayId) {
@@ -434,33 +463,33 @@
         document.getElementById(overlayId).classList.remove('popup-overlay-active');
     }
 
-    document.getElementById('loginOpenPopup').addEventListener('click', function() {
+    document.getElementById('loginOpenPopup').addEventListener('click', function () {
         openPopup('popup', 'loginPopupOverlay');
     });
 
-    document.getElementById('registerPopup').addEventListener('click', function() {
+    document.getElementById('registerPopup').addEventListener('click', function () {
         closePopup('popup', 'loginPopupOverlay');
         openPopup('regPopup', 'regPopupOverlay');
     });
 
-    document.getElementById('backToLogin').addEventListener('click', function() {
+    document.getElementById('backToLogin').addEventListener('click', function () {
         closePopup('regPopup', 'regPopupOverlay');
         openPopup('popup', 'loginPopupOverlay');
     });
 
     document.querySelectorAll('.popup-overlay').forEach(overlay => {
-        overlay.addEventListener('click', function() {
+        overlay.addEventListener('click', function () {
             closePopup('popup', 'loginPopupOverlay');
             closePopup('regPopup', 'regPopupOverlay');
         });
     });
 </script>
 <script>
-    $('#btnRegister').click(function (e){
+    $('#btnRegister').click(function (e) {
         const password = $('#RegPassword').val();
         const confirmPassword = $('#ConfirmRegPassword').val();
 
-        if (password !== confirmPassword){
+        if (password !== confirmPassword) {
             alert('Password mismatched');
             e.preventDefault();
         }

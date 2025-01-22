@@ -52,7 +52,10 @@ public class ProductServlet extends HttpServlet {
             }
 
             req.setAttribute("productList", productcards);
-            req.getRequestDispatcher("product.jsp").forward(req, resp);
+            if (req.getServletContext().getAttribute("role").equals("admin")) {
+                req.getRequestDispatcher("product.jsp").forward(req, resp);
+            }
+            req.getRequestDispatcher("user.jsp").forward(req, resp);
 
             connection.close();
         }catch (Exception e){

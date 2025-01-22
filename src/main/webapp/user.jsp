@@ -1,4 +1,5 @@
-<%--
+<%@ page import="lk.ijse.ecommercewebapplicationjavaee.model.ProductCard" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Sanduni
   Date: 1/18/2025
@@ -56,9 +57,9 @@
                                     PAGES
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Products</a></li>
+                                    <li><a class="dropdown-item" href="product">Products</a></li>
                                     <li><a class="dropdown-item" href="order.jsp">Orders</a></li>
-                                    <li><a class="dropdown-item" href="#">Cart</a></li>
+                                    <li><a class="dropdown-item" href="cart.jsp">Cart</a></li>
 
 
                                 </ul>
@@ -121,7 +122,7 @@
 </header>
 <main>
 <section>
-    <div class="card mb-2" style="max-width: 540px;">
+   <%-- <div class="card mb-2" style="max-width: 540px;">
         <div class="row g-0">
             <div class="col-md-4">
                 <img src="assects/images/story%20book%20-04.jpg" class="img-fluid rounded-start" alt="Book image">
@@ -139,11 +140,44 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
 
 </section>
+
+    <div class="card">
+        <%
+            List<ProductCard> productList = (List<ProductCard>) request.getAttribute("productList");
+            if (productList != null) {
+                for (ProductCard productCard : productList) {
+
+        %>
+        <div class="card mb-2" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="<%=productCard.getImage()%>" class="img-fluid rounded-start" alt="Book image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=productCard.getProductName()%>
+                        </h5>
+                        <p class="card-text text-truncate"><%=productCard.getProductDescription()%>
+                        </p>
+                        <p class="card-text mb-1"><strong>QTY:</strong><%=productCard.getProductQty()%>
+                        </p>
+                        <p class="card-text mb-1"><strong>Price:</strong><%=productCard.getProductPrice()%>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%
+                }
+            }
+        %>
+    </div>
 </main>
 <script src="assects/js/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>

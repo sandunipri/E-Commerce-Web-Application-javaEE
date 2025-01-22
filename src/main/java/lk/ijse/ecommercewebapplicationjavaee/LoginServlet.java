@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
                 String passwordDB = resultSet.getString("user_password");
                 if (password.equals(passwordDB)){
                     String role = resultSet.getString("user_role");
+                    req.getServletContext().setAttribute("role", role);
                     if (role.equals("admin")){
                         resp.sendRedirect("admin.jsp?message=Login Successful!");
                         return;

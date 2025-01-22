@@ -1,14 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: Sanduni
-  Date: 1/19/2025
-  Time: 9:14 PM
+  Date: 1/22/2025
+  Time: 2:47 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Order Management</title>
+    <title>Cart Managment</title>
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -25,12 +25,7 @@
     />
     <link rel="stylesheet" href="assects/css/header.css"/>
     <link rel="stylesheet" href="assects/css/main.css"/>
-    <link rel="stylesheet" href="assects/css/order.css">
 </head>
-<style>
-
-
-</style>
 <body>
 <header>
     <div class="topHeader">
@@ -52,10 +47,7 @@
                                 <a class="nav-link active" aria-current="page" href="#">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">PRODUCTS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">CART</a>
+                                <a class="nav-link" href="#">ABOUT</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -63,19 +55,39 @@
                                     PAGES
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">ORDERS</a></li>
-                                    <li><a class="dropdown-item" href="#">USERS</a></li>
+                                    <li><a class="dropdown-item" href="#">Products</a></li>
+                                    <li><a class="dropdown-item" href="order.jsp">Orders</a></li>
+                                    <li><a class="dropdown-item" href="#">Cart</a></li>
+
+
                                 </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    BLOG
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Latest Posts</a></li>
+                                    <li><a class="dropdown-item" href="#">Popular Articles</a></li>
+                                    <li><a class="dropdown-item" href="#">Categories</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">CONTACTS</a>
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </nav>
         </div>
     </div>
     <div class="middleHeader">
-
+        <div class="dropdown">
+            <button class="btnCategory dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                CATEGORY
+            </button>
+        </div>
         <div class="searchBar">
             <nav class="navbar">
                 <div class="container-fluid">
@@ -93,84 +105,35 @@
                 <p>123-456-7890</p>
             </div>
         </div>
-
-        <div>
-
-            <a href="index.jsp" class="btn btn-primary addProduct" id="logout">
-                <b>LogOut </b>
-            </a>
-        </div>
-
+        <a href="index.jsp" class="btn btn-primary " id="logout">
+            <b>LogOut </b>
+        </a>
     </div>
 </header>
 <main>
-    <div class="order-details">
-        <p class="text-center m-0 text">THANK YOU!</p>
-        <div class="searchBar">
-            <div class="container-fluid">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Order no" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-        <%--<table class="table">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Product</th>
-                <th scope="col">Total</th>
 
-            </tr>
-            </thead>
-            <tbody>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>products</td>
+            <td>price</td>
+            <td>Quantity</td>
+            <td>Total</td>
+            <td>Actions</td>
+        </tr>
+        </thead>
+        <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
-            </tbody>
-        </table>--%>
-        <div class="table-responsive">
-            <table class="table order-details-table">
-                <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Total</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><a href="#">Vans Off The Wall T-Shirt In</a> <strong>× 1</strong></td>
-                    <td><span>$59.00</span></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Supreme Being Icon Glitch T-Shirt</a> <strong>× 1</strong></td>
-                    <td><span>$58.00</span></td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>Subtotal:</th>
-                    <td><span>$117.00</span></td>
-                </tr>
-                <tr>
-                    <th>Payment Method:</th>
-                    <td>Cash on Delivery</td>
-                </tr>
-                <tr>
-                    <th>Total:</th>
-                    <td><span>$117.00</span></td>
-                </tr>
-                </tfoot>
-            </table>
-        </div>
-    </div>
-
+        </tbody>
+    </table>
 
 </main>
-
-
 <script src="assects/js/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
