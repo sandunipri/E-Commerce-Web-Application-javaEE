@@ -53,6 +53,7 @@ public class ProductServlet extends HttpServlet {
 
             req.setAttribute("productList", productcards);
             req.getRequestDispatcher("product.jsp").forward(req, resp);
+
             connection.close();
         }catch (Exception e){
            throw new RuntimeException(e);

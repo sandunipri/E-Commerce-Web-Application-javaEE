@@ -1,4 +1,6 @@
-<%@ page import="java.sql.ResultSet" %><%--
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.util.List" %>
+<%@ page import="lk.ijse.ecommercewebapplicationjavaee.model.CategoryCard" %><%--
   Created by IntelliJ IDEA.
   User: Sanduni
   Date: 1/19/2025
@@ -160,17 +162,17 @@
             <div class="row d-flex flex-wrap justify-content-center">
 
                 <%
-                    ResultSet resulSet = (ResultSet) request.getAttribute("resulSet");
-                    if (resulSet != null){
-                        while (resulSet.next()){
+                    List<CategoryCard> categoryLists = (List<CategoryCard>) request.getAttribute("categoryList");
+                    if (categoryLists != null){
+                        for (CategoryCard categoryCard : categoryLists){
                 %>
                 <div class="col-md-4" style="max-width: 30%;">
                     <div class="card">
-                        <h5 class="card-title"><%=resulSet.getString(2)%></h5>
-                        <img src="<%=resulSet.getString(3)%>" class="card-img-top" alt="Product Image">
+                        <h5 class="card-title"><%=categoryCard.getCategoryName()%></h5>
+                        <img src="<%=categoryCard.getCategoryImage()%>" class="card-img-top" alt="Product Image">
                         <div class="card-body text-center">
                             <p class="card-text">
-                                <%=resulSet.getString(4)%>
+                                <%=categoryCard.getCategoryDescription()%>
                             </p>
                             <a href="#" class="btn btn-view-products">View Products</a>
                         </div>

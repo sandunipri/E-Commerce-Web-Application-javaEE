@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import lk.ijse.ecommercewebapplicationjavaee.model.CategoryCard;
 
 import javax.sql.DataSource;
 import java.io.File;
@@ -19,6 +20,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 2, // 2MB
@@ -39,10 +42,19 @@ public class CategoryServlet extends HttpServlet {
             connection = dataSource.getConnection();
             ResultSet resultSet = connection.prepareStatement("SELECT * FROM category").executeQuery();
 
+            List<CategoryCard> categoryCardList = new ArrayList<>();
 
+            while (resultSet.next()){
+                categoryCardList.add(new CategoryCard(
+                        resultSet.getString("category_name"),
+                        resultSet.getString("category_image"),
+                        resultSet.getString("category_description")
+                ));
+            }
 
-            req.setAttribute("resulSet", resultSet);
+            req.setAttribute("categoryList", categoryCardList);
             req.getRequestDispatcher("category.jsp").forward(req, resp);
+
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -74,12 +86,12 @@ public class CategoryServlet extends HttpServlet {
             preparedStatement.setString(3,description);
 
             if (preparedStatement.executeUpdate() > 0){
-                resp.sendRedirect("category.jsp?message=Category Save Success");
+                resp.sendRedirect("category?message=Category Save Success");
                 System.out.println("Cat saved");
             }
             connection.close();
         } catch (Exception e) {
-            resp.sendRedirect("category.jsp?message=Category Save Failed");
+            resp.sendRedirect("category?message=Category Save Failed");
             e.printStackTrace();
         }
 
