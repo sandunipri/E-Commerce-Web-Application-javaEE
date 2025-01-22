@@ -110,7 +110,7 @@
                     <h5 class="modal-title" id="productModalLabel">ADD NEW PRODUCT</h5>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="product" method="post">
                         <div class="mb-3">
                             <label for="product-name" class="form-label">Product Name</label>
                             <input type="text" class="form-control" id="product-name" name="product_name" placeholder="Enter product name" required>
@@ -119,6 +119,9 @@
                             <label for="product-category" class="form-label">Category</label>
                             <select class="form-select" id="product-category" name="product_category" required>
                                 <option selected disabled>Select a category</option>
+                                <option value="2">Horror</option>
+                                <option value="3">Mystery</option>
+                                <option value="4">Romance</option>
                             </select>
                         </div>
 
@@ -130,15 +133,41 @@
                             <label for="product-description" class="form-label">Description</label>
                             <textarea class="form-control" id="product-description" name="product_description" rows="3" placeholder="Enter product description" required></textarea>
                         </div>
+                        <div class="mb-3">
+                            <label for="product-qty" class="form-label">QTY</label>
+                            <input class="form-control" type="number" id="product-qty" name="product_qty"  placeholder="Enter product qty" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-price" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="product-price" name="product_price" placeholder="Enter product price" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary back" data-bs-dismiss="modal">BACK</button>
+                            <button type="submit" class="btn btn-primary saveProduct">SAVE PRODUCT</button>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary back" data-bs-dismiss="modal">BACK</button>
-                    <button type="button" class="btn btn-primary saveProduct">SAVE PRODUCT</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card mb-2" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="assects/images/story%20book%20-04.jpg" class="img-fluid rounded-start" alt="Book image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text mb-1"><strong>Price:</strong> $699</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </main>
 
 <script src="assects/js/jquery-3.7.1.min.js"></script>
