@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import lk.ijse.ecommercewebapplicationjavaee.model.ProductCard;
 
 import javax.sql.DataSource;
 import java.io.File;
@@ -18,6 +19,8 @@ import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 2, // 2MB
@@ -32,12 +35,25 @@ public class ProductServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Connection connection = null;
         try{
-            Connection connection = dataSource.getConnection();
+            connection = dataSource.getConnection();
             ResultSet resultSet = connection.prepareStatement("SELECT * FROM products").executeQuery();
+            List<ProductCard> productcards = new ArrayList<>();
 
-            req.setAttribute("resultSet", resultSet);
+            while (resultSet.next()){
+                productcards.add(new ProductCard(
+                        resultSet.getString("product_image"),
+                        resultSet.getString("product_name"),
+                        resultSet.getString("product_description"),
+                        resultSet.getDouble("product_price"),
+                        resultSet.getInt("product_qty")
+                ));
+            }
+
+            req.setAttribute("productList", productcards);
             req.getRequestDispatcher("product.jsp").forward(req, resp);
+            connection.close();
         }catch (Exception e){
            throw new RuntimeException(e);
         }
@@ -45,6 +61,7 @@ public class ProductServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Connection connection = null;
         try {
             String name = req.getParameter("product_name");
             String description = req.getParameter("product_description");
@@ -65,7 +82,7 @@ public class ProductServlet extends HttpServlet {
                 Files.copy(inputStream, imageFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
             }
 
-            Connection connection = dataSource.getConnection();
+            connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO products (product_name,product_image,product_description,product_qty,product_price,category_id) VALUES (?,?,?,?,?,?)");
             preparedStatement.setString(1, name);
             String imagePath = "assects/productsImages/" + fileName;
@@ -76,13 +93,13 @@ public class ProductServlet extends HttpServlet {
             preparedStatement.setInt(6, Integer.parseInt(categoryID));
 
             if (preparedStatement.executeUpdate()>0){
-                resp.sendRedirect("product.jsp?message=product Save Success");
+                resp.sendRedirect("product?message=product Save Success");
                 System.out.println("Product saved");
             }
 
-
+            connection.close();
         } catch (Exception e) {
-            resp.sendRedirect("product.jsp?message=product Save Failed");
+            resp.sendRedirect("product?message=product Save Failed");
             e.printStackTrace();
         }
     }

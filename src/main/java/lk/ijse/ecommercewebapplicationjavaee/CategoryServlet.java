@@ -34,12 +34,16 @@ public class CategoryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Connection connection = null;
         try {
-            Connection connection = dataSource.getConnection();
+            connection = dataSource.getConnection();
             ResultSet resultSet = connection.prepareStatement("SELECT * FROM category").executeQuery();
+
+
 
             req.setAttribute("resulSet", resultSet);
             req.getRequestDispatcher("category.jsp").forward(req, resp);
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -57,12 +61,12 @@ public class CategoryServlet extends HttpServlet {
         String uploadDir = "C:\\Users\\priya\\Desktop\\Projects\\Advanced API\\E-Commerce Web Application-javaEE\\src\\main\\webapp\\assects\\imageDB";
 
         File imageFile = new File(uploadDir + File.separator + fileName);
-
-        try (InputStream inputStream = filepart.getInputStream()){
+            Connection connection = null;
+            try (InputStream inputStream = filepart.getInputStream()){
             Files.copy(inputStream, imageFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
 
-            Connection connection =dataSource.getConnection();
+            connection =dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO category (category_name ,category_image , category_description) VALUES (?,?,?)");
             preparedStatement.setString(1,name);
             String imageDbPath = "assects/imageDB/" + fileName;
@@ -73,6 +77,7 @@ public class CategoryServlet extends HttpServlet {
                 resp.sendRedirect("category.jsp?message=Category Save Success");
                 System.out.println("Cat saved");
             }
+            connection.close();
         } catch (Exception e) {
             resp.sendRedirect("category.jsp?message=Category Save Failed");
             e.printStackTrace();

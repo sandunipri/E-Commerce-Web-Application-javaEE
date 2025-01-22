@@ -48,7 +48,7 @@
                                 <a class="nav-link active" aria-current="page" href="#">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="product.jsp">PRODUCTS</a>
+                                <a class="nav-link" href="product">PRODUCTS</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">CART</a>

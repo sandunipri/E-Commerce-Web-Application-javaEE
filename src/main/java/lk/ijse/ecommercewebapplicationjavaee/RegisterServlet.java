@@ -25,9 +25,9 @@ public class RegisterServlet extends HttpServlet {
         String password = req.getParameter("RegPassword");
 
         System.out.println("name = " + name + " email = " + email + " password = " + password);
-
+        Connection connection = null;
         try {
-            Connection connection = dataSource.getConnection();
+            connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users VALUES (?,?,?,?,?)");
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, email);
@@ -38,8 +38,8 @@ public class RegisterServlet extends HttpServlet {
             if (preparedStatement.executeUpdate() > 0) {
                 resp.sendRedirect("index.jsp?message=Registration Successful");
             }
-
-        } catch (SQLException e) {
+            connection.close();
+        } catch (Exception e) {
             resp.sendRedirect("index.jsp?error=Registration Failed");
             e.printStackTrace();
         }

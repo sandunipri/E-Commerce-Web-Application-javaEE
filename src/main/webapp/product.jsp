@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.awt.*" %>
+<%@ page import="java.util.List" %>
+<%@ page import="lk.ijse.ecommercewebapplicationjavaee.model.ProductCard" %><%--
   Created by IntelliJ IDEA.
   User: Sanduni
   Date: 1/19/2025
@@ -152,20 +155,31 @@
         </div>
     </div>
     <div class="card">
+        <%
+            List<ProductCard> productList = (List<ProductCard>) request.getAttribute("productList");
+            if (productList != null){
+            for (ProductCard productCard : productList){
+
+        %>
         <div class="card mb-2" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="assects/images/story%20book%20-04.jpg" class="img-fluid rounded-start" alt="Book image">
+                    <img src="<%=productCard.getImage()%>" class="img-fluid rounded-start" alt="Book image">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <p class="card-text mb-1"><strong>Price:</strong> $699</p>
+                        <h5 class="card-title"><%=productCard.getProductName()%></h5>
+                        <p class="card-text text-truncate"><%=productCard.getProductDescription()%></p>
+                        <p class="card-text mb-1"><strong>QTY:</strong><%=productCard.getProductQty()%></p>
+                        <p class="card-text mb-1"><strong>Price:</strong><%=productCard.getProductPrice()%></p>
                     </div>
                 </div>
             </div>
         </div>
+        <%
+            }
+        }
+        %>
     </div>
 
 </main>

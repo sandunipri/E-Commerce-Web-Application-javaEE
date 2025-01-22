@@ -26,8 +26,9 @@ public class LoginServlet extends HttpServlet {
 
         System.out.println("email = " + email + " password = " + password);
 
+        Connection connection = null;
         try {
-            Connection connection = dataSource.getConnection();
+            connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE user_email = (?)");
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -45,7 +46,7 @@ public class LoginServlet extends HttpServlet {
                     resp.sendRedirect("index.jsp?error=Wrong Password!");
                 }
             }
-
+        connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
