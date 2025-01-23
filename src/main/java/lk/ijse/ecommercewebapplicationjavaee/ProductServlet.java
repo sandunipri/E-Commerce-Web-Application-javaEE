@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import lk.ijse.ecommercewebapplicationjavaee.dto.User;
 import lk.ijse.ecommercewebapplicationjavaee.model.ProductCard;
 
 import javax.sql.DataSource;
@@ -53,7 +54,8 @@ public class ProductServlet extends HttpServlet {
             }
 
             req.setAttribute("productList", productcards);
-            if (req.getServletContext().getAttribute("role").equals("admin")) {
+            User user = (User) req.getServletContext().getAttribute("user");
+            if (user.getRole().equals("admin")) {
                 req.getRequestDispatcher("product.jsp").forward(req, resp);
             }
             req.getRequestDispatcher("user.jsp").forward(req, resp);

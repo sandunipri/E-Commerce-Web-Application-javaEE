@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lk.ijse.ecommercewebapplicationjavaee.dto.User;
 import lk.ijse.ecommercewebapplicationjavaee.model.CartTable;
 
 import javax.sql.DataSource;
@@ -25,7 +26,7 @@ public class CartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String email = req.getServletContext().getAttribute("email").toString();
+        User user = (User) req.getServletContext().getAttribute("user");
 
         try {
             connection = dataSource.getConnection();
@@ -34,7 +35,7 @@ public class CartServlet extends HttpServlet {
                     "JOIN products p ON c.product_id = p.product_id " +
                     "WHERE c.user_email = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, email);
+            preparedStatement.setString(1, user.getEmail());
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -65,6 +66,7 @@ public class CartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
+            User user = (User) req.getServletContext().getAttribute("user");
             String productId = req.getParameter("productId");
             String productName = req.getParameter("productName");
             String productPrice = req.getParameter("productPrice");
@@ -78,8 +80,7 @@ public class CartServlet extends HttpServlet {
             preparedStatement.setInt(1, Integer.parseInt(productQty));
             preparedStatement.setDouble(2, total);
             preparedStatement.setInt(3, Integer.parseInt(productId));
-            String email = req.getServletContext().getAttribute("email").toString();
-            preparedStatement.setString(4, email);
+            preparedStatement.setString(4, user.getEmail());
 
             if (preparedStatement.executeUpdate() > 0) {
                 resp.sendRedirect("cart?message=Product Added to Cart!");

@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lk.ijse.ecommercewebapplicationjavaee.dto.User;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -33,22 +34,33 @@ public class LoginServlet extends HttpServlet {
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 String passwordDB = resultSet.getString("user_password");
-                if (password.equals(passwordDB)){
+
+                if (password.equals(passwordDB)) {
+                    String userName = resultSet.getString("user_name");
                     String role = resultSet.getString("user_role");
-                    req.getServletContext().setAttribute("role", role);
-                    req.getServletContext().setAttribute("email", email);
-                    if (role.equals("admin")){
+                    String status = resultSet.getString("user_status");
+
+                    User user = new User();
+                    user.setUserName(userName);
+                    user.setEmail(email);
+                    user.setRole(role);
+                    user.setPassword(passwordDB);
+                    user.setStatus(Boolean.parseBoolean(status));
+
+                    req.getServletContext().setAttribute("user", user);
+
+                    if (role.equals("admin")) {
                         resp.sendRedirect("admin.jsp?message=Login Successful!");
                         return;
                     }
                     resp.sendRedirect("user.jsp?message=Login Successful!");
-                }else {
+                } else {
                     resp.sendRedirect("index.jsp?error=Wrong Password!");
                 }
             }
-        connection.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

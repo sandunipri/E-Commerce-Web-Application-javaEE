@@ -137,8 +137,8 @@
                 }
         %>
         <form action="placeOrder" method="post">
-            <input type="hidden" name="netTotal" value="<%=subTotal%>">
-            <button type="submit" class="btn btn-primary btn-lg position-absolute" style="top: 70px; right: 20px">
+            <input type="hidden" name="subTotal" value="<%=subTotal%>">
+            <button type="submit" class="btn btn-primary ">
                 Purchase
             </button>
         </form>
