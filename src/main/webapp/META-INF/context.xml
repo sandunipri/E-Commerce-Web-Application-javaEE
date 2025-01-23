@@ -7,7 +7,7 @@
             url = "jdbc:mysql://localhost:3306/ecommerce"
             username = "root"
             password = "Ijse@1234"
-            maxTotal = "5"
-            initialSize = "5"
+            maxTotal = "50"
+            initialSize = "50"
     />
 </Context>

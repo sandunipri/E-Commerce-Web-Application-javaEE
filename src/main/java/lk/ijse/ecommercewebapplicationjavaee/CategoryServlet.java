@@ -63,6 +63,7 @@ public class CategoryServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Connection connection = null;
         try {
         String name = req.getParameter("name");
         String description = req.getParameter("category_description");
@@ -73,12 +74,12 @@ public class CategoryServlet extends HttpServlet {
         String uploadDir = "C:\\Users\\priya\\Desktop\\Projects\\Advanced API\\E-Commerce Web Application-javaEE\\src\\main\\webapp\\assects\\imageDB";
 
         File imageFile = new File(uploadDir + File.separator + fileName);
-            Connection connection = null;
+
             try (InputStream inputStream = filepart.getInputStream()){
             Files.copy(inputStream, imageFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
 
-            connection =dataSource.getConnection();
+            connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO category (category_name ,category_image , category_description) VALUES (?,?,?)");
             preparedStatement.setString(1,name);
             String imageDbPath = "assects/imageDB/" + fileName;

@@ -4,14 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
-public class ProductCard {
-    private int productId;
-    private String image;
+public class CartTable {
     private String productName;
-    private String productDescription;
     private double productPrice;
-    private int productQty;
+    private int qty;
+    private double total;
 }

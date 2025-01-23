@@ -18,13 +18,14 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="assects/css/header.css" />
-    <link rel="stylesheet" href="assects/css/main.css" />
+    <link rel="stylesheet" href="assects/css/header.css"/>
+    <link rel="stylesheet" href="assects/css/main.css"/>
 
     <style>
 
@@ -41,7 +42,9 @@
         <div class="nav-list">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -53,19 +56,21 @@
                                 <a class="nav-link" href="#">ABOUT</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
                                     PAGES
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="product">Products</a></li>
                                     <li><a class="dropdown-item" href="order.jsp">Orders</a></li>
-                                    <li><a class="dropdown-item" href="cart.jsp">Cart</a></li>
+                                    <li><a class="dropdown-item" href="cart">Cart</a></li>
 
 
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
                                     BLOG
                                 </a>
                                 <ul class="dropdown-menu">
@@ -121,63 +126,79 @@
 
 </header>
 <main>
-<section>
-   <%-- <div class="card mb-2" style="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="assects/images/story%20book%20-04.jpg" class="img-fluid rounded-start" alt="Book image">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text mb-1"><strong>Price:</strong> $699</p>
-                    <div class="input-group input-group-sm">
-                        <span class="input-group-text">Qty</span>
-                        <input type="number" class="form-control" value="1" min="1">
-                        <button class="btn btn-success">AddToCart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--%>
+    <section>
+        <%-- <div class="card mb-2" style="max-width: 540px;">
+             <div class="row g-0">
+                 <div class="col-md-4">
+                     <img src="assects/images/story%20book%20-04.jpg" class="img-fluid rounded-start" alt="Book image">
+                 </div>
+                 <div class="col-md-8">
+                     <div class="card-body">
+                         <h5 class="card-title">Card title</h5>
+                         <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                         <p class="card-text mb-1"><strong>Price:</strong> $699</p>
+                         <div class="input-group input-group-sm">
+                             <span class="input-group-text">Qty</span>
+                             <input type="number" class="form-control" value="1" min="1">
+                             <button class="btn btn-success">AddToCart</button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>--%>
 
-</section>
+    </section>
 
-    <div class="card">
+    <section class="row">
+
         <%
             List<ProductCard> productList = (List<ProductCard>) request.getAttribute("productList");
             if (productList != null) {
                 for (ProductCard productCard : productList) {
 
         %>
-        <div class="card mb-2" style="max-width: 540px;">
+        <form class="card mb-2" style="max-width: 500px;" action="cart" method="post">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="<%=productCard.getImage()%>" class="img-fluid rounded-start" alt="Book image">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title"><%=productCard.getProductName()%>
-                        </h5>
-                        <p class="card-text text-truncate"><%=productCard.getProductDescription()%>
-                        </p>
-                        <p class="card-text mb-1"><strong>QTY:</strong><%=productCard.getProductQty()%>
-                        </p>
-                        <p class="card-text mb-1"><strong>Price:</strong><%=productCard.getProductPrice()%>
-                        </p>
+                        <h5 class="card-title"><%=productCard.getProductName()%></h5>
+                        <input type="hidden" name="productName" class="card-title" value="<%=productCard.getProductName()%>">
+                        <br>
+                        <p class="card-text"><%=productCard.getProductDescription()%></p>
+                        <input type="hidden" name="productDescription"
+                               class="card-text text-truncate" value="<%=productCard.getProductDescription()%>">
+
+                        <br>
+                        <input type="number" name="qty" class="form-control" aria-label="Sizing example input"
+                               aria-describedby="inputGroup-sizing-sm" value="1" min="1"
+                               max="<%=productCard.getProductQty()%>">
+
+                        <br>
+                        <p class="card-text"><strong>Price:</strong><%=productCard.getProductPrice()%></p>
+                        <input type="hidden" name="productPrice"
+                               class="card-text mb-1" value="<%=productCard.getProductPrice()%>">
+                        <br>
+                        <input type="hidden" name="productId" value="<%=productCard.getProductId()%>">
+                        <button type="submit" class="btn btn-success">AddToCart</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <%
                 }
             }
         %>
-    </div>
+
+    </section>
+
 </main>
 <script src="assects/js/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

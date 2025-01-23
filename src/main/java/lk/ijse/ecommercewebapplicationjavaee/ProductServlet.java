@@ -43,6 +43,7 @@ public class ProductServlet extends HttpServlet {
 
             while (resultSet.next()){
                 productcards.add(new ProductCard(
+                        resultSet.getInt("product_id"),
                         resultSet.getString("product_image"),
                         resultSet.getString("product_name"),
                         resultSet.getString("product_description"),

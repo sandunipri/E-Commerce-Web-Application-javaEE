@@ -1,10 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sanduni
-  Date: 1/22/2025
-  Time: 2:47 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="lk.ijse.ecommercewebapplicationjavaee.model.CartTable" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -123,14 +118,35 @@
         </tr>
         </thead>
         <tbody>
+        <%
+            List<CartTable> cartList = (List<CartTable>) request.getAttribute("cartList");
+            if (cartList != null) {
+                double subTotal = 0;
+                for (CartTable cart : cartList) {
+                     subTotal += cart.getTotal();
+
+        %>
             <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <td><%=cart.getProductName()%></td>
+                <td><%=cart.getProductPrice()%></td>
+                <td><%=cart.getQty()%></td>
+                <td><%=cart.getTotal()%></td>
+                <td><button class="btn btn-danger">Remove</button></td>
             </tr>
+        <%
+                }
+        %>
+        <form action="placeOrder" method="post">
+            <input type="hidden" name="netTotal" value="<%=subTotal%>">
+            <button type="submit" class="btn btn-primary btn-lg position-absolute" style="top: 70px; right: 20px">
+                Purchase
+            </button>
+        </form>
+        <%
+            }
+        %>
         </tbody>
+
     </table>
 
 </main>
