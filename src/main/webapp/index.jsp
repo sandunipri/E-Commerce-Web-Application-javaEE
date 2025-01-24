@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assects/css/style.css">
     <link rel="stylesheet" href="assects/css/header.css"/>
     <link rel="stylesheet" href="assects/css/main.css"/>
+    <link rel="stylesheet" href="assects/css/home.css">
 </head>
 <style>
 
@@ -365,7 +366,7 @@
             <div class="card transition-card" style="width: 25rem;">
                 <img src="assects/images/img.png" class="card-img-top" alt="blog_image">
                 <div class="card-body">
-                    <p class="post-meta"><span>13/08/2017 </span> | Popular Articles</p>
+                    <p class="post-meta"><span><b class="fs-6">13/08/2017</b></span> | <b>Popular Articles</b></p>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
                 </div>
@@ -373,7 +374,7 @@
             <div class="card transition-card" style="width: 25rem;">
                 <img src="assects/images/blog-01.jpg" class="card-img-top" alt="blog_image">
                 <div class="card-body">
-                    <p class="post-meta"><span>13/08/2017 </span> | Popular Articles</p>
+                    <p class="post-meta"><span><b class="fs-6">13/08/2017</b></span> | <b>Popular Articles</b></p>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
                 </div>
@@ -381,7 +382,7 @@
             <div class="card transition-card" style="width: 25rem;">
                 <img src="assects/images/blog%20-01.png" class="card-img-top " alt="blog_image">
                 <div class="card-body">
-                    <p class="post-meta"><span>13/08/2017 </span> | Popular Articles</p>
+                    <p class="post-meta"><span><b class="fs-6">13/08/2017</b></span> | <b>Popular Articles</b></p>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
                 </div>

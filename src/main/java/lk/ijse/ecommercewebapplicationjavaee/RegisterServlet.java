@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -24,6 +25,8 @@ public class RegisterServlet extends HttpServlet {
         String email = req.getParameter("RegEmail");
         String password = req.getParameter("RegPassword");
 
+        String encryptedPassword = new BCryptPasswordEncoder().encode(password);
+
         System.out.println("name = " + name + " email = " + email + " password = " + password);
         Connection connection = null;
         try {
@@ -32,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, email);
             preparedStatement.setString(3, "user");
-            preparedStatement.setString(4, password);
+            preparedStatement.setString(4, encryptedPassword);
             preparedStatement.setBoolean(5, true);
 
             if (preparedStatement.executeUpdate() > 0) {

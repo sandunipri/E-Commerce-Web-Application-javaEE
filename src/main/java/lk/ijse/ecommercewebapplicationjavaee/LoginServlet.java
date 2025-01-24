@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.ecommercewebapplicationjavaee.dto.User;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -37,7 +38,8 @@ public class LoginServlet extends HttpServlet {
             while (resultSet.next()) {
                 String passwordDB = resultSet.getString("user_password");
 
-                if (password.equals(passwordDB)) {
+                boolean isPasswordMatch = new BCryptPasswordEncoder().matches(password, passwordDB);
+                if (isPasswordMatch) {
                     String userName = resultSet.getString("user_name");
                     String role = resultSet.getString("user_role");
                     String status = resultSet.getString("user_status");
@@ -46,7 +48,7 @@ public class LoginServlet extends HttpServlet {
                     user.setUserName(userName);
                     user.setEmail(email);
                     user.setRole(role);
-                    user.setPassword(passwordDB);
+                    user.setPassword(password);
                     user.setStatus(Boolean.parseBoolean(status));
 
                     req.getServletContext().setAttribute("user", user);
