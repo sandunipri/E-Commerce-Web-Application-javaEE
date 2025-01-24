@@ -4,7 +4,6 @@ main{
 .carousal{
     width: 100%;
     height: calc(100% - 200px);
-
 }
 .bookDesc{
     width: 80%;
