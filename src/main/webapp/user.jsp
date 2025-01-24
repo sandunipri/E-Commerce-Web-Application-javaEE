@@ -148,14 +148,12 @@
          </div>--%>
 
     </section>
-
     <section class="row">
 
         <%
             List<ProductCard> productList = (List<ProductCard>) request.getAttribute("productList");
             if (productList != null) {
                 for (ProductCard productCard : productList) {
-
         %>
         <form class="card mb-2" style="max-width: 500px;" action="cart" method="post">
             <div class="row g-0">

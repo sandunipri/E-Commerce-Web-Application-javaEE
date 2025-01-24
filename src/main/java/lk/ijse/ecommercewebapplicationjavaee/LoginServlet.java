@@ -44,6 +44,8 @@ public class LoginServlet extends HttpServlet {
                     String role = resultSet.getString("user_role");
                     String status = resultSet.getString("user_status");
 
+
+
                     User user = new User();
                     user.setUserName(userName);
                     user.setEmail(email);

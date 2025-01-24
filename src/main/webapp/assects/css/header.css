@@ -107,7 +107,7 @@ p{
     font-size: 17px;
     font-family: "Roboto Condensed", serif;
 }
-#logout{
+#logout , #loginOpenPopup{
     width: 150px;
     height: 40px;
     background-color: darkcyan;
@@ -149,9 +149,8 @@ p{
     font-family: "Roboto Condensed", serif;
 }
 .login-form , .Register-form {
-
-    width: 400px;
-    height: 500px;
+    width: 415px;
+    height: 520px;
     border: 2px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px #ccc;

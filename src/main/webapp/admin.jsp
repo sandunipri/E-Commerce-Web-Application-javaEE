@@ -25,6 +25,7 @@
     />
     <link rel="stylesheet" href="assects/css/header.css"/>
     <link rel="stylesheet" href="assects/css/main.css"/>
+    <link rel="stylesheet" href="assects/css/style.css">
 </head>
 <style>
 
@@ -109,9 +110,48 @@
                 <p>123-456-7890</p>
             </div>
         </div>
-        <a href="index.jsp" class="btn btn-primary " id="logout">
-            <b>LogOut </b>
-        </a>
+        <div>
+            <a href="index.jsp" class="btn btn-primary " id="logout">
+                <b>LogOut </b>
+            </a>
+            <button type="button" class="btn btn-primary" id="loginOpenPopup">
+                NEW ADMIN
+            </button>
+        </div>
+        <div class="popup-overlay" id="regPopupOverlay"></div>
+        <div class="popup" id="regPopup">
+            <form class="Register-form" action="admin" method="post"  >
+                <h4 class="register-title">NEW ADMIN</h4>
+                <p><span class="font-weight-bold">I am a new admin</span></p>
+                <div class="row">
+                    <div class="col-md-12 col-12 mb--15 line">
+                        <label for="name">Full Name</label>
+                        <input class="mb-0 form-control loginInput registerInput" type="text" id="name" name="name"
+                               placeholder="Enter your full name">
+                    </div>
+                    <div class="col-12 mb--20 line">
+                        <label for="RegEmail">Email</label>
+                        <input class="mb-0 form-control loginInput registerInput" type="email" id="RegEmail"
+                               name="RegEmail" placeholder="Enter Your Email Address Here..">
+                    </div>
+                    <div class="col-12 mb--20 line">
+                        <label for="RegPassword">Password</label>
+                        <input class="mb-0 form-control loginInput registerInput" type="password" id="RegPassword"
+                               name="RegPassword" placeholder="Enter your password">
+                    </div>
+                    <div class="col-12 mb--20 line">
+                        <label for="ConfirmRegPassword">Confirm Password</label>
+                        <input class="mb-0 form-control loginInput registerInput" type="password"
+                               id="ConfirmRegPassword" name="ConfirmRegPassword" placeholder="Confirm password">
+                    </div>
+                </div>
+                <br/>
+                <div class="btnsUser">
+                    <button class="btnLogin" id="backToLogin">BACK</button>
+                    <button class="btnReg" type="submit" id="btnRegister">REGISTER</button>
+                </div>
+            </form>
+        </div>
     </div>
 </header>
 <main>
@@ -265,10 +305,40 @@
 
 </main>
 <footer></footer>
+
 <script src="assects/js/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+</script>
+<script>
+    // Get the elements
+    const loginOpenPopup = document.getElementById("loginOpenPopup");
+    const regPopupOverlay = document.getElementById("regPopupOverlay");
+    const regPopup = document.getElementById("regPopup");
+    const backToLogin = document.getElementById("backToLogin");
+
+    // Open the pop-up
+    loginOpenPopup.addEventListener("click", () => {
+        regPopupOverlay.style.display = "block";
+        regPopup.style.display = "block";
+    });
+
+    // Close the pop-up
+    backToLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        regPopupOverlay.style.display = "none";
+        regPopup.style.display = "none";
+    });
+
+    // Close when clicking outside the modal
+    regPopupOverlay.addEventListener("click", () => {
+        regPopupOverlay.style.display = "none";
+        regPopup.style.display = "none";
+    });
+
+</script>
+
 
 </body>
 </html>

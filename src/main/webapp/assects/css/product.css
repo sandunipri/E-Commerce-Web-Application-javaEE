@@ -1,3 +1,4 @@
+
 .modal-body{
     width: 80%;
     height: auto;
@@ -36,4 +37,14 @@ form{
 }
 .modal-footer{
     margin: auto;
+}
+.card-set {
+    padding: 20px 0;
+}
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #ffffff, #f7f9fc);
 }
