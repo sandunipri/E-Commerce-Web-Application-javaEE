@@ -37,7 +37,7 @@
             <img class="logo" src="assects/images/web%20application%20picture.jpg" alt="Web Application Logo">
             <p class="webTitle">WEB APPLICATION</p>
         </div>
-        <div class="nav-list">
+      <%--  <div class="nav-list">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -71,7 +71,7 @@
 
                 </div>
             </nav>
-        </div>
+        </div>--%>
     </div>
     <div class="middleHeader">
 
@@ -99,8 +99,8 @@
                     data-bs-target="#productModal">
                 <b>ADD PRODUCTS</b>
             </button>
-            <a href="index.jsp" class="btn btn-primary addProduct" id="logout">
-                <b>LogOut </b>
+            <a href="admin.jsp" class="btn btn-primary addProduct" id="logout">
+                <b>BACK</b>
             </a>
         </div>
 

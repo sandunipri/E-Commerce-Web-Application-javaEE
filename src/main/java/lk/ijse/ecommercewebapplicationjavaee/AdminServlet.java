@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 
 @WebServlet(name = "AdminServlet", value = "/admin")
 public class AdminServlet extends HttpServlet {
+
     @Resource(name = "java:comp/env/jdbc/pool")
     private DataSource dataSource;
     Connection connection = null;

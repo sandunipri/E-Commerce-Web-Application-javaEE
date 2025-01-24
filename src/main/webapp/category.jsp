@@ -40,7 +40,7 @@
             <img class="logo" src="assects/images/web%20application%20picture.jpg" alt="Web Application Logo">
             <p class="webTitle">WEB APPLICATION</p>
         </div>
-        <div class="nav-list">
+<%--        <div class="nav-list">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +71,7 @@
 
                 </div>
             </nav>
-        </div>
+        </div>--%>
     </div>
     <div class="middleHeader">
 
@@ -97,8 +97,8 @@
             <button type="button" class="btn addCategory" data-bs-toggle="modal" data-bs-target="#categoryModal">
                 <b>ADD CATEGORY</b>
             </button>
-            <a href="index.jsp" class="btn " id="logout">
-                <b>LogOut </b>
+            <a href="admin.jsp" class="btn " id="logout">
+                <b>BACK </b>
             </a>
         </div>
 

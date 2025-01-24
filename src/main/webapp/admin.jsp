@@ -55,18 +55,10 @@
                                 <a class="nav-link" href="product">PRODUCTS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">CART</a>
+                                <a class="nav-link" href="#">USERS</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    PAGES
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="order.jsp">ORDERS</a></li>
-                                    <li><a class="dropdown-item" href="#">USERS</a></li>
-
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ORDERS</a>
                             </li>
                         </ul>
                         <div class="dropdown">
@@ -120,7 +112,7 @@
         </div>
         <div class="popup-overlay" id="regPopupOverlay"></div>
         <div class="popup" id="regPopup">
-            <form class="Register-form" action="admin" method="post"  >
+            <form class="Register-form" action="admin" method="post">
                 <h4 class="register-title">NEW ADMIN</h4>
                 <p><span class="font-weight-bold">I am a new admin</span></p>
                 <div class="row">
