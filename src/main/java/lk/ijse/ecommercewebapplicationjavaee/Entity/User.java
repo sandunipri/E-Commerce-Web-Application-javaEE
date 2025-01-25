@@ -1,4 +1,4 @@
-package lk.ijse.ecommercewebapplicationjavaee.dto;
+package lk.ijse.ecommercewebapplicationjavaee.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

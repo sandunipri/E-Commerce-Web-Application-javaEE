@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="lk.ijse.ecommercewebapplicationjavaee.model.OrderTable" %>
+<%@ page import="lk.ijse.ecommercewebapplicationjavaee.model.OrderDetailTable" %><%--
   Created by IntelliJ IDEA.
   User: Sanduni
   Date: 1/19/2025
@@ -135,36 +137,67 @@
             <table class="table order-details-table">
                 <thead>
                 <tr>
-                    <th>Product</th>
+                    <th>Order No</th>
+                    <th>User Email</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
                     <th>Total</th>
                 </tr>
                 </thead>
                 <tbody>
+                <%
+                    List<OrderTable> allOrders = (List<OrderTable>) request.getAttribute("orderList");
+                    if (allOrders != null) {
+                        for (OrderTable order : allOrders) {
+                %>
                 <tr>
-                    <td><a href="#">Vans Off The Wall T-Shirt In</a> <strong>× 1</strong></td>
-                    <td><span>$59.00</span></td>
+                    <td><%= order.getOrderId() %></td>
+                    <td><%= order.getUserEmail() %></td>
+                    <td><%= order.getProductName() %></td>
+                    <td><%= order.getQty() %></td>
+                    <td><%= order.getTotal() %></td>
                 </tr>
+                <%
+                    }
+                } else {
+                %>
                 <tr>
-                    <td><a href="#">Supreme Being Icon Glitch T-Shirt</a> <strong>× 1</strong></td>
-                    <td><span>$58.00</span></td>
+                    <td colspan="5" class="text-center">No orders found</td>
                 </tr>
+                <% } %>
                 </tbody>
-                <tfoot>
+            </table>
+
+            <!-- Sub Total Table -->
+            <table class="table order-summary-table">
+                <thead>
                 <tr>
-                    <th>Subtotal:</th>
-                    <td><span>$117.00</span></td>
+                    <th>User Email</th>
+                    <th>Sub Total</th>
                 </tr>
+                </thead>
+                <tbody>
+                <%
+                    List<OrderDetailTable> orderDetailsList = (List<OrderDetailTable>) request.getAttribute("orderDetailsList");
+                    if (orderDetailsList != null) {
+                        for (OrderDetailTable detail : orderDetailsList) {
+                %>
                 <tr>
-                    <th>Payment Method:</th>
-                    <td>Cash on Delivery</td>
+                    <td><%= detail.getUserEmail() %></td>
+                    <td><%= detail.getSubTotal() %></td>
                 </tr>
+                <%
+                    }
+                } else {
+                %>
                 <tr>
-                    <th>Total:</th>
-                    <td><span>$117.00</span></td>
+                    <td colspan="2" class="text-center">No details found</td>
                 </tr>
-                </tfoot>
+                <% } %>
+                </tbody>
             </table>
         </div>
+
     </div>
 </main>
 

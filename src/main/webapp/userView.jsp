@@ -63,7 +63,7 @@
         <div>
 
             <a href="admin.jsp" class="btn btn-primary addProduct" id="logout">
-                <b>LogOut </b>
+                <b>BACK</b>
             </a>
         </div>
 

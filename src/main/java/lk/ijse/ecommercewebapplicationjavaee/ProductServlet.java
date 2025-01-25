@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
-import lk.ijse.ecommercewebapplicationjavaee.dto.User;
+import lk.ijse.ecommercewebapplicationjavaee.Entity.User;
 import lk.ijse.ecommercewebapplicationjavaee.model.ProductCard;
 
 import javax.sql.DataSource;

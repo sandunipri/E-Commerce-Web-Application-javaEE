@@ -6,13 +6,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lk.ijse.ecommercewebapplicationjavaee.dto.User;
-import lk.ijse.ecommercewebapplicationjavaee.model.CartTable;
+import lk.ijse.ecommercewebapplicationjavaee.Entity.User;
 
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.*;
-import java.util.List;
 
 @WebServlet(name = "PlaceOrderServlet", value = "/placeOrder")
 public class PlaceOrderServlet extends HttpServlet {

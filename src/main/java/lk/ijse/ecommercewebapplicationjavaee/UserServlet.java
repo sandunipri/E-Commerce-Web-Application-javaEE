@@ -39,7 +39,6 @@ public class UserServlet extends HttpServlet {
 //                        resultSet.getBoolean("status"))
                 ));
 
-                System.out.println("User loaded");
             }
             req.setAttribute("userList", userLists);
             req.getRequestDispatcher("userView.jsp").forward(req, resp);

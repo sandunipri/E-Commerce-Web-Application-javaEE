@@ -58,7 +58,7 @@
                                 <a class="nav-link" href="UserServlet">USERS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="order.jsp">ORDERS</a>
+                                <a class="nav-link" href="OrderViewServlet">ORDERS</a>
                             </li>
                         </ul>
                         <div class="dropdown">
