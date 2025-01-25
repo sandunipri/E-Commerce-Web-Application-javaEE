@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="lk.ijse.ecommercewebapplicationjavaee.model.UserTable" %><%--
   Created by IntelliJ IDEA.
   User: Sanduni
   Date: 1/19/2025
@@ -38,41 +39,6 @@
             <img class="logo" src="assects/images/img_1.png" alt="Web Application Logo">
             <p class="webTitle">DREAMER'S SHELF</p>
         </div>
-        <div class="nav-list">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">PRODUCTS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">CART</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    PAGES
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">ORDERS</a></li>
-                                    <li><a class="dropdown-item" href="#">USERS</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </nav>
-        </div>
     </div>
     <div class="middleHeader">
 
@@ -96,7 +62,7 @@
 
         <div>
 
-            <a href="index.jsp" class="btn btn-primary addProduct" id="logout">
+            <a href="admin.jsp" class="btn btn-primary addProduct" id="logout">
                 <b>LogOut </b>
             </a>
         </div>
@@ -105,15 +71,8 @@
 </header>
 <main>
     <div class="order-details">
-        <p class="text-center m-0 text">THANK YOU!</p>
-        <div class="searchBar">
-            <div class="container-fluid">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Order no" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
+        <p class="text-center m-0 text">ALL USERS</p>
+
         <%--<table class="table">
             <thead>
             <tr>
@@ -135,34 +94,30 @@
             <table class="table order-details-table">
                 <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Total</th>
+                    <th>User Name</th>
+                    <th>User Email</th>
+                    <th>User Role</th>
+                    <th>Status</th>
                 </tr>
                 </thead>
                 <tbody>
+                <%
+                    List<UserTable> allUsers = (List<UserTable>) request.getAttribute("userList");
+                    if (allUsers != null) {
+                        for (UserTable user : allUsers) {
+
+                %>
                 <tr>
-                    <td><a href="#">Vans Off The Wall T-Shirt In</a> <strong>× 1</strong></td>
-                    <td><span>$59.00</span></td>
+                    <td><%=user.getUserName()%></td>
+                    <td><%=user.getUserEmail()%></td>
+                    <td><%=user.getUserRole()%></td>
+                    <td><b>ACTIVE</b></td>
                 </tr>
-                <tr>
-                    <td><a href="#">Supreme Being Icon Glitch T-Shirt</a> <strong>× 1</strong></td>
-                    <td><span>$58.00</span></td>
-                </tr>
+                <%
+                    }
+                }
+                %>
                 </tbody>
-                <tfoot>
-                <tr>
-                    <th>Subtotal:</th>
-                    <td><span>$117.00</span></td>
-                </tr>
-                <tr>
-                    <th>Payment Method:</th>
-                    <td>Cash on Delivery</td>
-                </tr>
-                <tr>
-                    <th>Total:</th>
-                    <td><span>$117.00</span></td>
-                </tr>
-                </tfoot>
             </table>
         </div>
     </div>
@@ -176,3 +131,4 @@
 
 </body>
 </html>
+

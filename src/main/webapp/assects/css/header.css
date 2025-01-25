@@ -31,6 +31,8 @@ header{
 .logo{
     width: 100px;
     height: 60px;
+    background-color: transparent;
+    
 }
 .logoAndName{
     display: flex;

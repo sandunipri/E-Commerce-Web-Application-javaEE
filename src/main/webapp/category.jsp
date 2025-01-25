@@ -37,8 +37,8 @@
 <header>
     <div class="topHeader">
         <div class="logoAndName">
-            <img class="logo" src="assects/images/web%20application%20picture.jpg" alt="Web Application Logo">
-            <p class="webTitle">WEB APPLICATION</p>
+            <img class="logo" src="assects/images/img_1.png" alt="Web Application Logo">
+            <p class="webTitle">DREAMER'S SHELF</p>
         </div>
 <%--        <div class="nav-list">
             <nav class="navbar navbar-expand-lg">

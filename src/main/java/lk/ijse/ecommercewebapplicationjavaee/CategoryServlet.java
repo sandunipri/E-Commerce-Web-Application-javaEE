@@ -50,6 +50,7 @@ public class CategoryServlet extends HttpServlet {
                         resultSet.getString("category_image"),
                         resultSet.getString("category_description")
                 ));
+
             }
 
             req.setAttribute("categoryList", categoryCardList);

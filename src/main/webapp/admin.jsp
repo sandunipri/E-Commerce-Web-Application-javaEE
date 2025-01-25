@@ -35,8 +35,8 @@
 <header>
     <div class="topHeader">
         <div class="logoAndName">
-            <img class="logo" src="assects/images/web%20application%20picture.jpg" alt="Web Application Logo">
-            <p class="webTitle">WEB APPLICATION</p>
+            <img class="logo" src="assects/images/img_1.png" alt="Web Application Logo">
+            <p class="webTitle">DREAMER'S SHELF</p>
         </div>
         <div class="nav-list">
             <nav class="navbar navbar-expand-lg">
@@ -55,10 +55,10 @@
                                 <a class="nav-link" href="product">PRODUCTS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">USERS</a>
+                                <a class="nav-link" href="UserServlet">USERS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">ORDERS</a>
+                                <a class="nav-link" href="order.jsp">ORDERS</a>
                             </li>
                         </ul>
                         <div class="dropdown">
