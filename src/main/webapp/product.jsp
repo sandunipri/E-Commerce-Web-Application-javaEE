@@ -37,41 +37,6 @@
             <img class="logo" src="assects/images/img_1.png" alt="Web Application Logo">
             <p class="webTitle">DREAMER'S SHELF</p>
         </div>
-      <%--  <div class="nav-list">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">PRODUCTS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">CART</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    PAGES
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="order.jsp">ORDERS</a></li>
-                                    <li><a class="dropdown-item" href="#">USERS</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </nav>
-        </div>--%>
     </div>
     <div class="middleHeader">
 
@@ -124,7 +89,7 @@
                         <div class="mb-3">
                             <label for="product-category" class="form-label">Category</label>
                             <select class="form-select" id="product-category" name="product_category" required>
-                                <option selected disabled>Select a category</option>
+                                <option class="formDropDown" selected disabled>Select a category</option>
                                 <option value="2">Horror</option>
                                 <option value="3">Mystery</option>
                                 <option value="4">Romance</option>

@@ -24,8 +24,11 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
+    <link rel="stylesheet" href="assects/css/style.css">
     <link rel="stylesheet" href="assects/css/header.css"/>
     <link rel="stylesheet" href="assects/css/main.css"/>
+    <link rel="stylesheet" href="assects/css/home.css">
 
     <style>
 
@@ -62,7 +65,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="product">Products</a></li>
-                                    <li><a class="dropdown-item" href="order.jsp">Orders</a></li>
+                                    <li><a class="dropdown-item" href="OrderViewServlet">Orders</a></li>
                                     <li><a class="dropdown-item" href="cart">Cart</a></li>
 
 
@@ -126,6 +129,191 @@
 
 </header>
 <main>
+    <article id="home">
+        <section class="carousal">
+            <div class="bookDesc">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"
+                     data-bs-interval="1500">
+                    <div class="carousel-inner carousel-control-transition">
+                        <div class="carousel-item active">
+                            <img src="assects/images/s.jpg" class="d-block imgCarousal" alt="Story-picture-01">
+                            <div class="carousel-caption d-none d-md-block caption-right">
+                                <h1>Story Book</h1>
+                                <p>
+                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                    eu fugiat nulla pariatur.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal"
+                                 alt="Story-picture-01">
+                            <div class="carousel-caption d-none d-md-block caption-right">
+                                <h1>Story Book</h1>
+                                <p>
+                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                    eu fugiat nulla pariatur.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assects/images/story%20book%20-04.jpg" class="d-block imgCarousal"
+                                 alt="Story-picture-01">
+                            <div class="carousel-caption d-none d-md-block caption-right">
+                                <h1>Story Book</h1>
+                                <p>
+                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                    eu fugiat nulla pariatur.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assects/images/story%20book%20-05.jpg" class="d-block imgCarousal"
+                                 alt="Story-picture-01">
+                            <div class="carousel-caption d-none d-md-block caption-right">
+                                <h1>Story Book</h1>
+                                <p>
+                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                    eu fugiat nulla pariatur.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal"
+                                 alt="Story-picture-01">
+                            <div class="carousel-caption d-none d-md-block caption-right">
+                                <h1>Story Book</h1>
+                                <p>
+                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                    eu fugiat nulla pariatur.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+    <article id="about">
+        <section class="AboutBooks">
+            <div class="about">
+                <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary position-relative">
+                    <img class="image-background position-absolute w-100 h-100"
+                         src="assects/images/story%20background-02.jpg"
+                         alt="background-image"
+                         style="object-fit: cover; top: 0; left: 0"
+                    />
+                    <div class="col-lg-6 px-0 position-relative">
+                        <h1 class="display-4 fst-italic">
+                            <b> "Unfold Your Next Adventure: A Journey Through Pages"</b>
+                        </h1>
+                        <p class="lead my-3 description">
+                            "Step into a world where stories come alive and imagination knows no
+                            bounds. Discover the latest page-turners, timeless classics, and
+                            hidden treasures that will captivate your mind and soul. This post
+                            highlights the most exciting reads and literary trends you won't
+                            want to miss."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-md-6">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <h3 class="mb-0 topic-paragraph">New Arrivals & Events</h3>
+                                <div class="mb-1 text-body-secondary">Nov 12</div>
+                                <p class="card-text mb-auto">
+                                    Exciting news for book lovers! Our shelves are now brimming with
+                                    the latest bestsellers, timeless classics, and hidden gems.
+                                    Explore the magic of reading with us today!
+                                </p>
+                            </div>
+                            <div class="col-auto d-none d-lg-block">
+                                <img
+                                        class="aboutStory"
+                                        src="assects/images/story%20image%2014.jpg"
+                                        alt="about-image"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div
+                                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+                        >
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <h3 class="mb-0 topic-paragraph">Exclusive Releases</h3>
+                                <div class="mb-1 text-body-secondary">Nov 12</div>
+                                <p class="card-text mb-auto">
+                                    We're thrilled to announce the arrival of exclusive new releases
+                                    available only in our library! Join our Reader's Club for early
+                                    access, special discounts, and monthly discussions with authors.
+                                </p>
+                            </div>
+                            <div class="col-auto d-none d-lg-block">
+                                <img
+                                        class="aboutStory"
+                                        src="assects/images/story%20book%20-13.jpg"
+                                        alt="about-image"
+                                />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <section id="blog">
+        <h2 class="bolgTitle">LATEST BLOGS</h2>
+        <div class="card-set d-flex justify-content-center text-center flex-wrap">
+            <div class="card transition-card" style="width: 25rem;">
+                <img src="assects/images/img.png" class="card-img-top" alt="blog_image">
+                <div class="card-body">
+                    <p class="post-meta"><span><b class="fs-6">13/08/2017</b></span> | <b>Popular Articles</b></p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card transition-card" style="width: 25rem;">
+                <img src="assects/images/blog-01.jpg" class="card-img-top" alt="blog_image">
+                <div class="card-body">
+                    <p class="post-meta"><span><b class="fs-6">13/08/2017</b></span> | <b>Popular Articles</b></p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+            <div class="card transition-card" style="width: 25rem;">
+                <img src="assects/images/blog%20-01.png" class="card-img-top " alt="blog_image">
+                <div class="card-body">
+                    <p class="post-meta"><span><b class="fs-6">13/08/2017</b></span> | <b>Popular Articles</b></p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+
+
     <section>
         <%-- <div class="card mb-2" style="max-width: 540px;">
              <div class="row g-0">
