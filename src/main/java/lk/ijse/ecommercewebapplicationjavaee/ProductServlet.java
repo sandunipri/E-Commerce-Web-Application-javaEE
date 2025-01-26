@@ -58,7 +58,7 @@ public class ProductServlet extends HttpServlet {
             if (user.getRole().equals("admin")) {
                 req.getRequestDispatcher("product.jsp").forward(req, resp);
             }
-            req.getRequestDispatcher("user.jsp").forward(req, resp);
+            req.getRequestDispatcher("viewProducts.jsp").forward(req, resp);
 
             connection.close();
         }catch (Exception e){

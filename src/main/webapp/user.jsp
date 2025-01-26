@@ -53,10 +53,10 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                                <a class="nav-link active" aria-current="page" href="#home">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">ABOUT</a>
+                                <a class="nav-link" href="#about">ABOUT</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -65,7 +65,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="product">Products</a></li>
-                                    <li><a class="dropdown-item" href="OrderViewServlet">Orders</a></li>
+                                    <li><a class="dropdown-item" href="#">Orders</a></li>
                                     <li><a class="dropdown-item" href="cart">Cart</a></li>
 
 
@@ -281,7 +281,6 @@
             </div>
         </section>
     </article>
-
     <section id="blog">
         <h2 class="bolgTitle">LATEST BLOGS</h2>
         <div class="card-set d-flex justify-content-center text-center flex-wrap">
@@ -311,74 +310,9 @@
             </div>
         </div>
     </section>
-    <section>
 
 
-    <section>
-        <%-- <div class="card mb-2" style="max-width: 540px;">
-             <div class="row g-0">
-                 <div class="col-md-4">
-                     <img src="assects/images/story%20book%20-04.jpg" class="img-fluid rounded-start" alt="Book image">
-                 </div>
-                 <div class="col-md-8">
-                     <div class="card-body">
-                         <h5 class="card-title">Card title</h5>
-                         <p class="card-text text-truncate">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                         <p class="card-text mb-1"><strong>Price:</strong> $699</p>
-                         <div class="input-group input-group-sm">
-                             <span class="input-group-text">Qty</span>
-                             <input type="number" class="form-control" value="1" min="1">
-                             <button class="btn btn-success">AddToCart</button>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>--%>
 
-    </section>
-    <section class="row">
-
-        <%
-            List<ProductCard> productList = (List<ProductCard>) request.getAttribute("productList");
-            if (productList != null) {
-                for (ProductCard productCard : productList) {
-        %>
-        <form class="card mb-2" style="max-width: 500px;" action="cart" method="post">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="<%=productCard.getImage()%>" class="img-fluid rounded-start" alt="Book image">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title"><%=productCard.getProductName()%></h5>
-                        <input type="hidden" name="productName" class="card-title" value="<%=productCard.getProductName()%>">
-                        <br>
-                        <p class="card-text"><%=productCard.getProductDescription()%></p>
-                        <input type="hidden" name="productDescription"
-                               class="card-text text-truncate" value="<%=productCard.getProductDescription()%>">
-
-                        <br>
-                        <input type="number" name="qty" class="form-control" aria-label="Sizing example input"
-                               aria-describedby="inputGroup-sizing-sm" value="1" min="1"
-                               max="<%=productCard.getProductQty()%>">
-
-                        <br>
-                        <p class="card-text"><strong>Price:</strong><%=productCard.getProductPrice()%></p>
-                        <input type="hidden" name="productPrice"
-                               class="card-text mb-1" value="<%=productCard.getProductPrice()%>">
-                        <br>
-                        <input type="hidden" name="productId" value="<%=productCard.getProductId()%>">
-                        <button type="submit" class="btn btn-success">AddToCart</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <%
-                }
-            }
-        %>
-
-    </section>
 
 </main>
 <script src="assects/js/jquery-3.7.1.min.js"></script>

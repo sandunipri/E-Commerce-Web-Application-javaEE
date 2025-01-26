@@ -66,8 +66,8 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#blog">Latest Posts</a></li>
-                                    <li><a class="dropdown-item" href="#">Popular Articles</a></li>
-                                    <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+                                    <li><a class="dropdown-item" href="#blog">Popular Articles</a></li>
+                                    <li><a class="dropdown-item" href="#blog">New Arrivals</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
