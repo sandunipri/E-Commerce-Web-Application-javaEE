@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assects/css/header.css"/>
     <link rel="stylesheet" href="assects/css/main.css"/>
     <link rel="stylesheet" href="assects/css/home.css">
+    <link href="assects/framework/bootstrap.min.css">
 </head>
 <style>
 
@@ -216,13 +217,15 @@
                         <div class="carousel-item active">
                             <img src="assects/images/s.jpg" class="d-block imgCarousal" alt="Story-picture-01">
                             <div class="carousel-caption d-none d-md-block caption-right">
-                                <h1>Story Book</h1>
+                                <h1>Adventure Storybook</h1>
                                 <p>
-                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                    eu fugiat nulla pariatur.
+                                    "Get ready for a thrilling expedition through unknown territories, where every page
+                                    brims with excitement and discovery. Follow brave protagonists as they navigate
+                                    treacherous paths, encounter daring challenges, and uncover hidden treasures. This
+                                    adventure storybook promises heart-pounding moments, unforgettable characters, and a
+                                    world that comes alive with every twist and turn. Perfect for readers seeking a tale
+                                    that fuels their wanderlust and awakens their inner explorer."
+
                                 </p>
                             </div>
                         </div>
@@ -231,13 +234,14 @@
                             <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal"
                                  alt="Story-picture-01">
                             <div class="carousel-caption d-none d-md-block caption-right">
-                                <h1>Story Book</h1>
+                                <h1>Mystery Storybook</h1>
                                 <p>
-                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                    eu fugiat nulla pariatur.
+                                    "Delve into a gripping tale where secrets lurk in every corner and nothing is as it
+                                    seems. This mystery storybook invites you to become the detective, piecing together
+                                    subtle clues and untangling webs of deceit. As the plot thickens, each revelation
+                                    will pull you deeper into a narrative of suspense and intrigue. With unexpected
+                                    twists, compelling characters, and a final twist you’ll never see coming, this book
+                                    is a must-read for those who love solving the unsolvable."
                                 </p>
                             </div>
                         </div>
@@ -245,13 +249,15 @@
                             <img src="assects/images/story%20book%20-04.jpg" class="d-block imgCarousal"
                                  alt="Story-picture-01">
                             <div class="carousel-caption d-none d-md-block caption-right">
-                                <h1>Story Book</h1>
+                                <h1>Fantasy Storybook</h1>
                                 <p>
-                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                    eu fugiat nulla pariatur.
+                                    "Enter a mesmerizing realm where magic flows through the air, ancient prophecies
+                                    shape destinies, and mythical creatures roam the land. This fantasy storybook weaves
+                                    an intricate tapestry of wonder and imagination, filled with richly detailed worlds
+                                    and unforgettable characters. From epic battles to heartfelt moments of friendship
+                                    and sacrifice, this tale is a celebration of courage, dreams, and the boundless
+                                    power of belief. Ideal for readers yearning to escape into a universe beyond their
+                                    wildest dreams."
                                 </p>
                             </div>
                         </div>
@@ -259,13 +265,15 @@
                             <img src="assects/images/story%20book%20-05.jpg" class="d-block imgCarousal"
                                  alt="Story-picture-01">
                             <div class="carousel-caption d-none d-md-block caption-right">
-                                <h1>Story Book</h1>
+                                <h1>Inspirational Storybook</h1>
                                 <p>
-                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                    eu fugiat nulla pariatur.
+                                    "Immerse yourself in a collection of heartfelt tales that celebrate the beauty of
+                                    the human spirit. Each story in this inspirational storybook captures themes of
+                                    resilience, kindness, and hope, painting vivid portraits of individuals overcoming
+                                    challenges and discovering their true potential. These uplifting narratives are
+                                    perfect for readers seeking encouragement and a reminder of the strength we all
+                                    carry within. Whether it’s a story of redemption, self-discovery, or the power of
+                                    compassion, this book is sure to leave a lasting impression."
                                 </p>
                             </div>
                         </div>
@@ -273,13 +281,15 @@
                             <img src="assects/images/story%20book%20-03.jpg" class="d-block imgCarousal"
                                  alt="Story-picture-01">
                             <div class="carousel-caption d-none d-md-block caption-right">
-                                <h1>Story Book</h1>
+                                <h1>Classic Children’s Storybook</h1>
                                 <p>
-                                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                    eu fugiat nulla pariatur.
+                                    "Step into a world of timeless tales that have captivated the hearts of generations.
+                                    This classic children’s storybook is a treasure trove of magical adventures,
+                                    unforgettable characters, and valuable life lessons. From whimsical fairy tales to
+                                    endearing fables, each story is brimming with charm and imagination. Designed to
+                                    spark curiosity and nurture a love for reading, this book is perfect for children
+                                    and nostalgic adults alike. Share these enchanting stories with your loved ones and
+                                    create memories that will last a lifetime."
                                 </p>
                             </div>
                         </div>
@@ -359,7 +369,6 @@
             </div>
         </section>
     </article>
-
     <section id="blog">
         <h2 class="bolgTitle">LATEST BLOGS</h2>
         <div class="card-set d-flex justify-content-center text-center flex-wrap">
@@ -444,5 +453,7 @@
         }
     });
 </script>
+<script src="assects/framework/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

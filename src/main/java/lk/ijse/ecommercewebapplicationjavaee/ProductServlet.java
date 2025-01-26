@@ -123,7 +123,7 @@ public class ProductServlet extends HttpServlet {
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Connection connection = null;
         try {
-            System.out.println("Delete Product");
+
             String productId = req.getParameter("productId");
             connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM products WHERE product_id = ?");
@@ -132,7 +132,7 @@ public class ProductServlet extends HttpServlet {
             if (preparedStatement.executeUpdate() > 0) {
                 resp.sendRedirect("product?message=Product Removed from Products!");
             }
-            System.out.println("Product Removed from Products!");
+
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();

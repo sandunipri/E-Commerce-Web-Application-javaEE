@@ -29,7 +29,11 @@
     <link rel="stylesheet" href="assects/css/header.css"/>
     <link rel="stylesheet" href="assects/css/main.css"/>
     <link rel="stylesheet" href="assects/css/product.css">
+    <link href="assects/framework/bootstrap.min.css">
 </head>
+<style>
+
+</style>
 <body>
 <header>
     <div class="topHeader">
@@ -117,7 +121,9 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary back" data-bs-dismiss="modal">BACK</button>
-                            <button type="submit" class="btn btn-primary saveProduct">SAVE PRODUCT</button>
+                            <button type="submit" class="btn btn-primary saveProduct" name="productAction"
+                                    value="doPostProduct">SAVE PRODUCT
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -126,19 +132,20 @@
         </div>
     </div>
 
-    <section id="viewProducts" class="row">
-        <h2 class="productTitle">ALL PRODUCTS</h2>
+    <h2 class="productTitle">ALL PRODUCTS</h2>
+    <section id="viewProducts" class="row column-gap-1 m-1">
         <%
             List<ProductCard> productList = (List<ProductCard>) request.getAttribute("productList");
             if (productList != null) {
                 for (ProductCard productCard : productList) {
         %>
-        <div class="card mb-2" style="max-width: 500px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="<%=productCard.getImage()%>" class="img-fluid rounded-start" alt="Book image">
+        <%--<div class="card mb-2 productCard" >
+            <div class="row g-0 imgAndDesc">
+                <div class="col-md-4 productImage" >
+                    <img src="<%=productCard.getImage()%>" class="img-fluid rounded-start "
+                         alt="Book image" style="object-fit: cover;">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 desc">
                     <div class="card-body">
                         <h5 class="card-title"><%=productCard.getProductName()%>
                         </h5>
@@ -151,7 +158,7 @@
                                class="card-text text-truncate" value="<%=productCard.getProductDescription()%>">
 
                         <br>
-                        <input type="number" name="qty" class="form-control" aria-label="Sizing example input"
+                        <input style="width: 100px" type="number" name="qty" class="form-control" aria-label="Sizing example input"
                                aria-describedby="inputGroup-sizing-sm" value="1" min="1"
                                max="<%=productCard.getProductQty()%>">
 
@@ -163,18 +170,45 @@
                         <br>
                         <form action="product" method="post">
                             <input type="hidden" name="productId" value="<%=productCard.getProductId()%>">
-                            <button type="submit" class="btn btn-danger" name="productAction" value="doDeleteProduct">DELETE</button>
+                            <button type="submit" class="btn btn-danger" name="productAction" value="doDeleteProduct">
+                                DELETE
+                            </button>
                         </form>
-
                     </div>
                 </div>
             </div>
+        </div>--%>
+        <div class="col-md-4" style="max-width: 30%;">
+            <div class="card">
+                <h5 class="card-title"><%=productCard.getProductName()%></h5>
+                <img src="<%=productCard.getImage()%>" class="card-img-top" alt="Product Image">
+                <div class="card-body text-center">
+                    <p class="card-text">
+                        <%=productCard.getProductDescription()%>
+                    </p>
+                    <p class="card-text">
+                        <strong>Price:</strong> <%=productCard.getProductPrice()%>
+                    </p>
+                    <input style="width: 100px" type="number" name="qty" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-sm" value="1" min="1"
+                           max="<%=productCard.getProductQty()%>">
+
+                    <br>
+                </div>
+                <form action="product" method="post">
+                    <input type="hidden" name="productId" value="<%=productCard.getProductId()%>">
+                    <button type="submit" class="btn btn-danger" name="productAction" value="doDeleteProduct">
+                        DELETE
+                    </button>
+                </form>
+            </div>
+
         </div>
+
         <%
                 }
             }
         %>
-
     </section>
 
 </main>
@@ -183,6 +217,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+<script src="assects/framework/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

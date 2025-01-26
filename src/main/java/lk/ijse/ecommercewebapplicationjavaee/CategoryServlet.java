@@ -111,7 +111,7 @@ public class CategoryServlet extends HttpServlet {
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Connection connection = null;
         try {
-            System.out.println("Delete category");
+
             String categoryId = req.getParameter("categoryId");
             connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(" DELETE FROM category WHERE category_id = ?");
@@ -120,7 +120,6 @@ public class CategoryServlet extends HttpServlet {
             if (preparedStatement.executeUpdate() > 0) {
                 resp.sendRedirect("category?message=Category Removed from category!");
             }
-            System.out.println("Product Removed from Products!");
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
