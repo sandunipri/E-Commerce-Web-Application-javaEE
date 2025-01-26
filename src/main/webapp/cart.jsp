@@ -20,7 +20,6 @@
     />
     <link rel="stylesheet" href="assects/css/header.css"/>
     <link rel="stylesheet" href="assects/css/main.css"/>
-    <link href="assects/framework/bootstrap.min.css">
 </head>
 <body>
 <header>
@@ -28,54 +27,6 @@
         <div class="logoAndName">
             <img class="logo" src="assects/images/img_1.png" alt="Web Application Logo">
             <p class="webTitle">DREAMER'S SHELF</p>
-        </div>
-        <div class="nav-list">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">ABOUT</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    PAGES
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Products</a></li>
-                                    <li><a class="dropdown-item" href="order.jsp">Orders</a></li>
-                                    <li><a class="dropdown-item" href="#">Cart</a></li>
-
-
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    BLOG
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Latest Posts</a></li>
-                                    <li><a class="dropdown-item" href="#">Popular Articles</a></li>
-                                    <li><a class="dropdown-item" href="#">Categories</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">CONTACTS</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
         </div>
     </div>
     <div class="middleHeader">
@@ -125,45 +76,87 @@
             if (cartList != null) {
                 double subTotal = 0;
                 for (CartTable cart : cartList) {
-                     subTotal += cart.getTotal();
+                    subTotal += cart.getTotal();
 
         %>
-            <tr>
-                <td><%=cart.getCartId()%></td>
-                <td><%=cart.getProductName()%></td>
-                <td><%=cart.getProductPrice()%></td>
-                <td><%=cart.getQty()%></td>
-                <td><%=cart.getTotal()%></td>
+        <tr>
+            <td><%=cart.getCartId()%>
+            </td>
+            <td><%=cart.getProductName()%>
+            </td>
+            <td><%=cart.getProductPrice()%>
+            </td>
+            <td><%=cart.getQty()%>
+            </td>
+            <td><%=cart.getTotal()%>
+            </td>
 
-                <td>
-                    <form action="cart" method="post">
-                        <input type="hidden" name="cartId" value="<%=cart.getCartId()%>">
-                        <button class="btn btn-danger" name="action" value="doDelete">Remove</button>
-                    </form>
-                </td>
-            </tr>
-        <%
-                }
-        %>
-        <form action="placeOrder" method="post">
-            <input type="hidden" name="subTotal" value="<%=subTotal%>">
-            <button type="submit" class="btn btn-primary ">
-                Purchase
-            </button>
-        </form>
+            <td>
+                <form action="cart" method="post">
+                    <input type="hidden" name="cartId" value="<%=cart.getCartId()%>">
+                    <button class="btn btn-danger" name="action" value="doDelete">Remove</button>
+                </form>
+            </td>
+        </tr>
         <%
             }
         %>
+        <%--        <form action="placeOrder" method="post">
+                    <input type="hidden" name="subTotal" value="<%=subTotal%>">
+                    <button type="submit" class="btn btn-primary ">
+                        Purchase
+                    </button>
+                </form>--%>
         </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4" class="text-end"><strong>Subtotal:</strong></td>
+            <td colspan="2"><%=subTotal%>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" class="text-center">
+                <form action="placeOrder" method="post" onsubmit="handlePurchase(event)">
+                    <input type="hidden" name="subTotal" value="<%=subTotal%>">
+                    <button type="submit" class="btn btn-primary">Purchase</button>
+                </form>
+            </td>
+        </tr>
+        </tfoot>
+        <%
+            }
+        %>
+
 
     </table>
 
+    <div id="notification"
+         style="display:none; position:fixed; top:10px; right:10px; background:green; color:white; padding:10px; border-radius:5px; z-index:1000;">
+        Order placed successfully!
+    </div>
+
+
 </main>
+
 <script src="assects/js/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-<script src="assects/framework/bootstrap.bundle.min.js"></script>
+<script>
+    function handlePurchase(event) {
 
+        event.preventDefault();
+
+
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+
+
+        setTimeout(() => {
+            notification.style.display = 'none';
+            event.target.submit();
+        }, 2000);
+    }
+</script>
 </body>
 </html>

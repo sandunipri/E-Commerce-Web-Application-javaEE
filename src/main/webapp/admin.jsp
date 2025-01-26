@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="assects/css/header.css"/>
     <link rel="stylesheet" href="assects/css/main.css"/>
     <link rel="stylesheet" href="assects/css/style.css">
-    <link href="assects/framework/bootstrap.min.css">
 </head>
 <style>
 
@@ -305,7 +304,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous">
 </script>
-<script src="assects/framework/bootstrap.bundle.min.js"></script>
+
 <script>
     // Get the elements
     const loginOpenPopup = document.getElementById("loginOpenPopup");
@@ -333,7 +332,5 @@
     });
 
 </script>
-
-
 </body>
 </html>

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assects/css/header.css"/>
     <link rel="stylesheet" href="assects/css/main.css"/>
     <link rel="stylesheet" href="assects/css/home.css">
-    <link href="assects/framework/bootstrap.min.css">
+
 </head>
 <style>
 
@@ -72,7 +72,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">CONTACTS</a>
+                                <a class="nav-link" href="contact.jsp">CONTACTS</a>
                             </li>
                         </ul>
                     </div>
@@ -376,24 +376,25 @@
                 <img src="assects/images/img.png" class="card-img-top" alt="blog_image">
                 <div class="card-body">
                     <p class="post-meta"><span><b class="fs-6">13/08/2017</b></span> | <b>Popular Articles</b></p>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-text">Reading Challenges & Lists: Join in on fun reading challenges and explore
+                        curated book lists across genres to keep your reading journey exciting and diverse.</p>
                 </div>
             </div>
             <div class="card transition-card" style="width: 25rem;">
                 <img src="assects/images/blog-01.jpg" class="card-img-top" alt="blog_image">
                 <div class="card-body">
                     <p class="post-meta"><span><b class="fs-6">13/08/2017</b></span> | <b>Popular Articles</b></p>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-text">Author Insights & Interviews: Get to know your favorite authors through
+                        exclusive interviews, personal stories, and a closer look at their creative process.
+                    </p>
                 </div>
             </div>
             <div class="card transition-card" style="width: 25rem;">
                 <img src="assects/images/blog%20-01.png" class="card-img-top " alt="blog_image">
                 <div class="card-body">
                     <p class="post-meta"><span><b class="fs-6">13/08/2017</b></span> | <b>Popular Articles</b></p>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-text">Book Reviews & Recommendations: A blog dedicated to honest book reviews and
+                        reading recommendations, helping readers discover their next favorite read.</p>
                 </div>
             </div>
         </div>
@@ -453,7 +454,7 @@
         }
     });
 </script>
-<script src="assects/framework/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

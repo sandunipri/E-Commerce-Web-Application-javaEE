@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="assects/css/header.css" />
     <link rel="stylesheet" href="assects/css/main.css" />
     <link rel="stylesheet" href="assects/css/category.css">
-    <link href="assects/framework/bootstrap.min.css">
 </head>
 <style>
 
@@ -41,38 +40,6 @@
             <img class="logo" src="assects/images/img_1.png" alt="Web Application Logo">
             <p class="webTitle">DREAMER'S SHELF</p>
         </div>
-<%--        <div class="nav-list">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">PRODUCTS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">CART</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    PAGES
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="order.jsp">ORDERS</a></li>
-                                    <li><a class="dropdown-item" href="#">USERS</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </nav>
-        </div>--%>
     </div>
     <div class="middleHeader">
 
@@ -189,30 +156,6 @@
                     }
                 %>
 
-                <%--<div class="col-md-4" style="max-width: 30%;">
-                    <div class="card">
-                        <h5 class="card-title">Horror Books</h5>
-                        <img src="assects/images/story%20category%20-02.jpg" class="card-img-top" alt="Category Image">
-                        <div class="card-body text-center">
-                            <p class="card-text">
-                                This is a creative description of the product. It highlights the unique features and benefits that make this product stand out.
-                            </p>
-                            <a href="#" class="btn btn-view-products">View Products</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4" style="max-width: 30%;">
-                    <div class="card">
-                        <h5 class="card-title">Mystery Books</h5>
-                        <img src="assects/images/story%20category%20-01.jpg" class="card-img-top" alt="Product Image">
-                        <div class="card-body text-center">
-                            <p class="card-text">
-                                This is a creative description of the product. It highlights the unique features and benefits that make this product stand out.
-                            </p>
-                            <a href="#" class="btn btn-view-products">View Products</a>
-                        </div>
-                    </div>
-                </div>--%>
             </div>
         </div>
     </section>
@@ -222,7 +165,6 @@
 
 <script src="assects/js/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="assects/framework/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
