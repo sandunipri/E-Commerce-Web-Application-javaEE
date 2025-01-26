@@ -94,8 +94,8 @@
                             <select class="form-select" id="product-category" name="product_category" required>
                                 <option class="formDropDown" selected disabled>Select a category</option>
                                 <option value="17">Contemporary Fiction</option>
-                                <option value="28">Mystery & Thriller</option>
-<%--                                <option value="19">Romance</option>--%>
+                                <option value="19">Mystery & Thriller</option>
+                                <option value="20">Romance</option>
 <%--                                <option value="20">Historical Fiction</option>--%>
 <%--                                <option value="21">Science Fiction & Fantasy</option>--%>
 
