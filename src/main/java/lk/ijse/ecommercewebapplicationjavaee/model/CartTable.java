@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 public class CartTable {
+    private int cartId;
     private String productName;
     private double productPrice;
     private int qty;

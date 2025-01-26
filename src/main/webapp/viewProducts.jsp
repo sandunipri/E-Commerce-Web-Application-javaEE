@@ -108,7 +108,7 @@
                            class="card-text mb-1" value="<%=productCard.getProductPrice()%>">
                     <br>
                     <input type="hidden" name="productId" value="<%=productCard.getProductId()%>">
-                    <button type="submit" class="btn btn-success">AddToCart</button>
+                    <button type="submit" class="btn btn-success" name="action" value="doPost">AddToCart</button>
                 </div>
             </div>
         </div>

@@ -110,6 +110,7 @@
     <table class="table table-bordered">
         <thead>
         <tr>
+            <td>Cart ID</td>
             <td>products</td>
             <td>price</td>
             <td>Quantity</td>
@@ -127,11 +128,18 @@
 
         %>
             <tr>
+                <td><%=cart.getCartId()%></td>
                 <td><%=cart.getProductName()%></td>
                 <td><%=cart.getProductPrice()%></td>
                 <td><%=cart.getQty()%></td>
                 <td><%=cart.getTotal()%></td>
-                <td><button class="btn btn-danger">Remove</button></td>
+
+                <td>
+                    <form action="cart" method="post">
+                        <input type="hidden" name="cartId" value="<%=cart.getCartId()%>">
+                        <button class="btn btn-danger" name="action" value="doDelete">Remove</button>
+                    </form>
+                </td>
             </tr>
         <%
                 }

@@ -30,7 +30,7 @@ public class CartServlet extends HttpServlet {
 
         try {
             connection = dataSource.getConnection();
-            String query = "SELECT c.qty, c.total, p.product_name, p.product_price " +
+            String query = "SELECT c.qty, c.total,c.cart_id,p.product_name, p.product_price " +
                     "FROM cart c " +
                     "JOIN products p ON c.product_id = p.product_id " +
                     "WHERE c.user_email = ?";
@@ -43,6 +43,7 @@ public class CartServlet extends HttpServlet {
 
             while (resultSet.next()){
                 cartTables.add(new CartTable(
+                        resultSet.getInt("cart_id"),
                         resultSet.getString("product_name"),
                         resultSet.getDouble("product_price"),
                         resultSet.getInt("qty"),
@@ -66,6 +67,14 @@ public class CartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
+
+            String action = req.getParameter("action");
+            if (action.equals("doDelete")) {
+                doDelete(req, resp);
+                return;
+            }
+
+
             User user = (User) req.getServletContext().getAttribute("user");
             String productId = req.getParameter("productId");
             String productName = req.getParameter("productName");
@@ -75,8 +84,9 @@ public class CartServlet extends HttpServlet {
 
             System.out.println("productName = " + productName + " productPrice = " + productPrice + " productQty = " + productQty + " total = " + total);
 
+
             connection = dataSource.getConnection();
-            PreparedStatement preparedStatement =  connection.prepareStatement("INSERT INTO cart ( qty, total,product_id,user_email) VALUES (?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO cart ( qty, total,product_id,user_email) VALUES (?,?,?,?)");
             preparedStatement.setInt(1, Integer.parseInt(productQty));
             preparedStatement.setDouble(2, total);
             preparedStatement.setInt(3, Integer.parseInt(productId));
@@ -87,11 +97,29 @@ public class CartServlet extends HttpServlet {
             }
             connection.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             resp.sendRedirect("cart.jsp?message=Failed to add product to cart!");
         }
-
     }
 
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            String cartId = req.getParameter("cartId");
+            connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM cart WHERE cart_id = ?");
+            preparedStatement.setInt(1, Integer.parseInt(cartId));
+
+            if (preparedStatement.executeUpdate() > 0) {
+                resp.sendRedirect("cart?message=Product Removed from Cart!");
+            }
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.sendRedirect("cart.jsp?message=Failed to remove product from cart!");
+        }
+    }
 }
+
+
