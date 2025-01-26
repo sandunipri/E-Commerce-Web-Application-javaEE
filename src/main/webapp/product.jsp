@@ -126,7 +126,56 @@
         </div>
     </div>
 
+    <section id="viewProducts" class="row">
+        <h2 class="productTitle">ALL PRODUCTS</h2>
+        <%
+            List<ProductCard> productList = (List<ProductCard>) request.getAttribute("productList");
+            if (productList != null) {
+                for (ProductCard productCard : productList) {
+        %>
+        <div class="card mb-2" style="max-width: 500px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="<%=productCard.getImage()%>" class="img-fluid rounded-start" alt="Book image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=productCard.getProductName()%>
+                        </h5>
+                        <input type="hidden" name="productName" class="card-title"
+                               value="<%=productCard.getProductName()%>">
+                        <br>
+                        <p class="card-text"><%=productCard.getProductDescription()%>
+                        </p>
+                        <input type="hidden" name="productDescription"
+                               class="card-text text-truncate" value="<%=productCard.getProductDescription()%>">
 
+                        <br>
+                        <input type="number" name="qty" class="form-control" aria-label="Sizing example input"
+                               aria-describedby="inputGroup-sizing-sm" value="1" min="1"
+                               max="<%=productCard.getProductQty()%>">
+
+                        <br>
+                        <p class="card-text"><strong>Price:</strong><%=productCard.getProductPrice()%>
+                        </p>
+                        <input type="hidden" name="productPrice"
+                               class="card-text mb-1" value="<%=productCard.getProductPrice()%>">
+                        <br>
+                        <form action="product" method="post">
+                            <input type="hidden" name="productId" value="<%=productCard.getProductId()%>">
+                            <button type="submit" class="btn btn-danger" name="productAction" value="doDeleteProduct">DELETE</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%
+                }
+            }
+        %>
+
+    </section>
 
 </main>
 

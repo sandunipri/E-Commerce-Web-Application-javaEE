@@ -58,6 +58,7 @@ public class ProductServlet extends HttpServlet {
             if (user.getRole().equals("admin")) {
                 req.getRequestDispatcher("product.jsp").forward(req, resp);
             }
+            System.out.println("Product List: " + productcards.size());
             req.getRequestDispatcher("viewProducts.jsp").forward(req, resp);
 
             connection.close();
@@ -70,6 +71,13 @@ public class ProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Connection connection = null;
         try {
+            String action = req.getParameter("productAction");
+            if (action.equals("doDeleteProduct")) {
+                doDelete(req, resp);
+                return;
+            }
+
+
             String name = req.getParameter("product_name");
             String description = req.getParameter("product_description");
             String qty = req.getParameter("product_qty");
@@ -108,6 +116,27 @@ public class ProductServlet extends HttpServlet {
         } catch (Exception e) {
             resp.sendRedirect("product?message=product Save Failed");
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Connection connection = null;
+        try {
+            System.out.println("Delete Product");
+            String productId = req.getParameter("productId");
+            connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM products WHERE product_id = ?");
+            preparedStatement.setInt(1, Integer.parseInt(productId));
+
+            if (preparedStatement.executeUpdate() > 0) {
+                resp.sendRedirect("product?message=Product Removed from Products!");
+            }
+            System.out.println("Product Removed from Products!");
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.sendRedirect("product.jsp?message=Failed to remove product from Products!");
         }
     }
 }
