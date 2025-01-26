@@ -44,8 +44,9 @@ public class CategoryServlet extends HttpServlet {
 
             List<CategoryCard> categoryCardList = new ArrayList<>();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 categoryCardList.add(new CategoryCard(
+                        resultSet.getInt("category_id"),
                         resultSet.getString("category_name"),
                         resultSet.getString("category_image"),
                         resultSet.getString("category_description")
@@ -66,28 +67,35 @@ public class CategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Connection connection = null;
         try {
-        String name = req.getParameter("name");
-        String description = req.getParameter("category_description");
+            String action = req.getParameter("categoryAction");
+            if (action.equals("doDeleteCategory")) {
+                doDelete(req, resp);
+                return;
+            }
 
-        Part filepart = req.getPart("image");
-        String fileName = filepart.getSubmittedFileName();
 
-        String uploadDir = "C:\\Users\\priya\\Desktop\\Projects\\Advanced API\\E-Commerce Web Application-javaEE\\src\\main\\webapp\\assects\\imageDB";
+            String name = req.getParameter("name");
+            String description = req.getParameter("category_description");
 
-        File imageFile = new File(uploadDir + File.separator + fileName);
+            Part filepart = req.getPart("image");
+            String fileName = filepart.getSubmittedFileName();
 
-            try (InputStream inputStream = filepart.getInputStream()){
-            Files.copy(inputStream, imageFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-        }
+            String uploadDir = "C:\\Users\\priya\\Desktop\\Projects\\Advanced API\\E-Commerce Web Application-javaEE\\src\\main\\webapp\\assects\\imageDB";
+
+            File imageFile = new File(uploadDir + File.separator + fileName);
+
+            try (InputStream inputStream = filepart.getInputStream()) {
+                Files.copy(inputStream, imageFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            }
 
             connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO category (category_name ,category_image , category_description) VALUES (?,?,?)");
-            preparedStatement.setString(1,name);
+            preparedStatement.setString(1, name);
             String imageDbPath = "assects/imageDB/" + fileName;
-            preparedStatement.setString(2,imageDbPath);
-            preparedStatement.setString(3,description);
+            preparedStatement.setString(2, imageDbPath);
+            preparedStatement.setString(3, description);
 
-            if (preparedStatement.executeUpdate() > 0){
+            if (preparedStatement.executeUpdate() > 0) {
                 resp.sendRedirect("category?message=Category Save Success");
                 System.out.println("Cat saved");
             }
@@ -97,5 +105,26 @@ public class CategoryServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Connection connection = null;
+        try {
+            System.out.println("Delete category");
+            String categoryId = req.getParameter("categoryId");
+            connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(" DELETE FROM category WHERE category_id = ?");
+            preparedStatement.setInt(1, Integer.parseInt(categoryId));
+
+            if (preparedStatement.executeUpdate() > 0) {
+                resp.sendRedirect("category?message=Category Removed from category!");
+            }
+            System.out.println("Product Removed from Products!");
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.sendRedirect("category.jsp?message=Failed to remove category from categories!");
+        }
     }
 }

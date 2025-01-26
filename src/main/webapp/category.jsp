@@ -148,7 +148,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary back" data-bs-dismiss="modal">BACK</button>
-                            <button type="submit" class="btn btn-primary saveCategory">SAVE CATEGORY</button>
+                            <button type="submit" class="btn btn-primary saveCategory" name="categoryAction" value="doPostCategory">SAVE CATEGORY</button>
                         </div>
                     </form>
                 </div>
@@ -174,9 +174,14 @@
                             <p class="card-text">
                                 <%=categoryCard.getCategoryDescription()%>
                             </p>
-                            <a href="#" class="btn btn-view-products">View Products</a>
+<%--                            <a href="#" class="btn btn-view-products">View Products</a>--%>
                         </div>
+                        <form action="category" method="post">
+                            <input type="hidden" name="categoryId" value="<%=categoryCard.getCategoryId()%>">
+                            <button type="submit" class="btn btn-danger" name="categoryAction" value="doDeleteCategory">DELETE</button>
+                        </form>
                     </div>
+
                 </div>
 
                 <%

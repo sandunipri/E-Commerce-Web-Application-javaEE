@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoryCard {
+    private int categoryId;
     private String categoryName;
     private String categoryImage;
     private String categoryDescription;
